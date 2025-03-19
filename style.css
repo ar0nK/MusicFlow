@@ -1,0 +1,321 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.search-bar {
+    width: 50%;
+    max-width: 1200px;
+}
+
+.account-info a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.account-info a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* Navigation styles */
+nav {
+    position: relative;
+}
+
+nav::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 50;
+}
+
+nav ul {
+    display: flex;
+    background-color: #eaeaea;
+    padding: 10px;
+    list-style: none;
+    margin: 0;
+    position: relative;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li:hover > a {
+    color: #007bff;
+}
+
+/* Dropdown menu */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #fff;
+    padding: 10px 0;
+    list-style: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: max-content;
+    z-index: 100;
+    flex-direction: column;
+}
+
+/* Show dropdown on hover */
+nav ul li:hover ul {
+    display: block;
+}
+
+/* Show overlay when dropdown is visible */
+nav ul li:hover ~ nav::after,
+nav ul li:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul li ul li {
+    margin: 0;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+nav ul li ul li:last-child {
+    border-bottom: none;
+}
+
+nav ul li ul li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s;
+    font-weight: normal;
+}
+
+nav ul li ul li:hover {
+    background-color: #f4f4f4;
+}
+
+/* Submenu styles */
+.has-submenu {
+    position: relative;
+}
+
+.submenu {
+    display: none !important;
+    position: absolute !important;
+    left: 100% !important;
+    top: 0 !important;
+    background-color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: max-content;
+    z-index: 101;
+}
+
+.has-submenu:hover > .submenu {
+    display: block !important;
+}
+
+/* Adjust the arrow indicator for submenu items */
+.has-submenu > a::after {
+    content: '›';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+/* Ensure the parent menu item has space for the arrow */
+.has-submenu > a {
+    padding-right: 25px !important;
+    position: relative;
+}
+
+/* Ensure submenus don't get affected by parent menu hover styles */
+nav ul li ul .submenu li:hover {
+    background-color: #f4f4f4;
+}
+
+/* Main content section */
+main {
+    position: relative;
+    z-index: 1;
+}
+
+/* Overlay for main content when dropdown is active */
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+nav ul li:hover ~ main::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Product grid */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.product {
+    width: 100%;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.product-info {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.product-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.product-category {
+    font-weight: bold;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+.product-purchase {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .product-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .search-bar {
+        width: 40%;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+    
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .search-bar {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+    }
+    
+    nav ul li ul {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .has-submenu > .submenu {
+        position: static !important;
+        box-shadow: none;
+        padding-left: 20px;
+    }
+}
