@@ -319,3 +319,38 @@ nav ul li:hover ~ main::before {
         padding-left: 20px;
     }
 }
+
+
+.img-thumbnail {
+    height: 100px;
+    object-fit: cover;
+}
+
+/* Fix the height of the carousel */
+#productCarousel .carousel-inner {
+    height: 500px; /* Set a fixed height for the carousel */
+}
+
+#productCarousel .carousel-inner img {
+    width: 100%; /* Ensure images fill the width of the carousel */
+    height: 100%; /* Ensure images fill the height of the carousel */
+    object-fit: cover; /* Crop the image to fill the carousel while maintaining aspect ratio */
+}
+
+/* Ensure consistent thumbnail size */
+.img-thumbnail {
+    height: 100px;
+    object-fit: cover;
+}
+
+/* Adjust carousel images to fill the carousel */
+#productCarousel .carousel-inner {
+    width: 80%; /* Ensure the carousel takes full width */
+    height: 90%; /* Allow the height to adjust dynamically */
+}
+
+#productCarousel .carousel-inner img {
+    width: 100%; /* Ensure images fill the width of the carousel */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the entire image is visible without cropping */
+}
