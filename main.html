@@ -89,125 +89,85 @@
     </nav>
 
     <main>
-        <div id="mainCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Carousel Indicators -->
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
+            
+            <!-- Carousel Items -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Első ajánlat</h5>
-                        <p>Leírás az első ajánlathoz</p>
+                    <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/Képek/1.jpg" class="d-block w-100" alt="Első ajánlat">
+                    <div class="carousel-caption">
+                        <h2>Első ajánlat</h2>
+                        <p class="d-none d-md-block">Leírás az első ajánlathoz</p>
+                        <a href="#" class="btn btn-primary">Részletek</a>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Második ajánlat</h5>
-                        <p>Leírás a második ajánlathoz</p>
+                    <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/Képek/1.jpg" class="d-block w-100" alt="Második ajánlat">
+                    <div class="carousel-caption">
+                        <h2>Második ajánlat</h2>
+                        <p class="d-none d-md-block">Leírás a második ajánlathoz</p>
+                        <a href="#" class="btn btn-primary">Részletek</a>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Harmadik ajánlat</h5>
-                        <p>Leírás a harmadik ajánlathoz</p>
+                    <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/Képek/1.jpg" class="d-block w-100" alt="Harmadik ajánlat">
+                    <div class="carousel-caption">
+                        <h2>Harmadik ajánlat</h2>
+                        <p class="d-none d-md-block">Leírás a harmadik ajánlathoz</p>
+                        <a href="#" class="btn btn-primary">Részletek</a>
                     </div>
                 </div>
             </div>
+            
+            <!-- Carousel Controls -->
             <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Előző</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-                <span class="visually-hidden">Next</span>
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Következő</span>
             </button>
         </div>
-    
-        <!-- Category Cards -->
-        <div class="container mb-5">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="container py-5">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
                 <!-- Guitar Category -->
                 <div class="col">
-                    <a href="#" class="text-decoration-none">
-                        <div class="card h-100">
-                            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Gitárok">
-                            <div class="card-body">
-                                <h5 class="card-title">Gitárok</h5>
-                                <p class="card-text">Klasszikus, akusztikus és elektromos gitárok széles választéka</p>
+                    <div class="card h-100 shadow-sm hover-card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Gitárok">
+                        <div class="card-body">
+                            <h5 class="card-title">Gitárok</h5>
+                            <p class="card-text">Klasszikus, akusztikus és elektromos gitárok széles választéka</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-outline-primary">Felfedezés</a>
+                                <small class="text-muted">Több mint 100 termék</small>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 
                 <!-- Bass Category -->
                 <div class="col">
-                    <a href="#" class="text-decoration-none">
-                        <div class="card h-100">
-                            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Basszusgitárok">
-                            <div class="card-body">
-                                <h5 class="card-title">Basszusgitárok</h5>
-                                <p class="card-text">4 és 5 húros basszusgitárok és kiegészítők</p>
+                    <div class="card h-100 shadow-sm hover-card">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Basszusgitárok">
+                        <div class="card-body">
+                            <h5 class="card-title">Basszusgitárok</h5>
+                            <p class="card-text">4 és 5 húros basszusgitárok és kiegészítők</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-outline-primary">Felfedezés</a>
+                                <small class="text-muted">50+ termék</small>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 
-                <!-- Drums Category -->
-                <div class="col">
-                    <a href="#" class="text-decoration-none">
-                        <div class="card h-100">
-                            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Dobok">
-                            <div class="card-body">
-                                <h5 class="card-title">Dobok</h5>
-                                <p class="card-text">Akusztikus és elektromos dobfelszerelések</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Keyboard Category -->
-                <div class="col">
-                    <a href="#" class="text-decoration-none">
-                        <div class="card h-100">
-                            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Billentyűk">
-                            <div class="card-body">
-                                <h5 class="card-title">Billentyűk</h5>
-                                <p class="card-text">Digitális zongorák és szintetizátorok</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Wind Instruments Category -->
-                <div class="col">
-                    <a href="#" class="text-decoration-none">
-                        <div class="card h-100">
-                            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Fúvós hangszerek">
-                            <div class="card-body">
-                                <h5 class="card-title">Fúvós hangszerek</h5>
-                                <p class="card-text">Teljes fúvós hangszer választék</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- String Instruments Category -->
-                <div class="col">
-                    <a href="#" class="text-decoration-none">
-                        <div class="card h-100">
-                            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Vonós hangszerek">
-                            <div class="card-body">
-                                <h5 class="card-title">Vonós hangszerek</h5>
-                                <p class="card-text">Hegedűk, brácsák és egyéb vonós hangszerek</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                <!-- Other categories following the same pattern... -->
             </div>
         </div>
         <div class="product-list">

@@ -400,3 +400,139 @@ nav ul li:hover ~ main::before {
 .carousel-control-next-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e");
 }
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    bottom: 20px;
+}
+
+.carousel-caption h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Card Styling */
+.hover-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-title {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.btn-outline-primary {
+    border-width: 2px;
+}
+
+@media (max-width: 768px) {
+    .carousel-caption {
+        padding: 10px;
+        bottom: 10px;
+    }
+    
+    .carousel-caption h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.875rem;
+    }
+}
+/* Main carousel container */
+#mainCarousel {
+    width: 80%; /* Take up 80% of the container width */
+    margin: 0 auto; /* Center the carousel */
+    margin-bottom: 3%; /* Space below the carousel */
+}
+
+/* Carousel item container */
+#mainCarousel .carousel-item {
+    height: 60vh; /* 60% of viewport height */
+}
+
+/* Image styling within carousel */
+#mainCarousel .carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain; /* Maintain aspect ratio without stretching */
+    max-height: 40vh; /* Maximum height relative to viewport */
+}
+
+/* Carousel caption styling */
+#mainCarousel .carousel-caption {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 1%;
+    padding: 2%;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #mainCarousel {
+        width: 90%; /* Wider carousel on smaller screens */
+    }
+
+    #mainCarousel .carousel-item {
+        height: 35vh; /* Slightly smaller height on mobile devices */
+    }
+    
+    #mainCarousel .carousel-item img {
+        max-height: 35vh;
+    }
+    
+    #mainCarousel .carousel-caption {
+        padding: 1.5%;
+        bottom: 3%;
+    }
+}
+
+@media (max-width: 576px) {
+    #mainCarousel {
+        width: 95%; /* Even wider on very small screens */
+    }
+
+    #mainCarousel .carousel-item {
+        height: 30vh; /* Even smaller height on very small devices */
+    }
+    
+    #mainCarousel .carousel-item img {
+        max-height: 30vh;
+    }
+
+    #mainCarousel .carousel-caption {
+        padding: 1%;
+        bottom: 2%;
+    }
+}
