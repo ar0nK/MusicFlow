@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wireframe HTML Skeleton</title>
+    <title>MusicFlow</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tailwind-custom.css">
 </head>
 <body>
     <header>
-        <a href="#" class="logo">Logó</a>
+        <a href="#" class="logo"><img src="IMG/logo.png" alt="logo" title="logo" style="width: auto; height: 120px;"></a>
         <input type="text" class="search-bar form-control" placeholder="search bar">
         <div class="account-info">
             <a href="#">Fiók</a> |
@@ -126,53 +127,82 @@
             </div>
             
             <!-- Carousel Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Előző</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Következő</span>
-            </button>
-        </div>
-        <div class="container py-5">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-                <!-- Guitar Category -->
-                <div class="col">
-                    <div class="card h-100 shadow-sm hover-card">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Gitárok">
-                        <div class="card-body">
-                            <h5 class="card-title">Gitárok</h5>
-                            <p class="card-text">Klasszikus, akusztikus és elektromos gitárok széles választéka</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="#" class="btn btn-outline-primary">Felfedezés</a>
-                                <small class="text-muted">Több mint 100 termék</small>
-                            </div>
-                        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Előző</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Következő</span>
+        </button>
+    </div>
+    <div class="container py-5">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4">
+            <!-- Guitar Category -->
+            <div class="col">
+                <div class="card h-100 shadow-sm hover-card" style="max-width: 12rem; cursor: pointer;" onclick="location.href='#';">
+                    <img src="IMG/gitar.jpg" class="card-img-top" alt="Gitárok">
+                    <div class="card-body p-2 text-center">
+                        <h5 class="card-title">Gitárok</h5>
                     </div>
                 </div>
-                
-                <!-- Bass Category -->
-                <div class="col">
-                    <div class="card h-100 shadow-sm hover-card">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Basszusgitárok">
-                        <div class="card-body">
-                            <h5 class="card-title">Basszusgitárok</h5>
-                            <p class="card-text">4 és 5 húros basszusgitárok és kiegészítők</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="#" class="btn btn-outline-primary">Felfedezés</a>
-                                <small class="text-muted">50+ termék</small>
-                            </div>
-                        </div>
+            </div>
+            
+            <!-- Bass Category -->
+            <div class="col">
+                <div class="card h-100 shadow-sm hover-card" style="max-width: 12rem; cursor: pointer;" onclick="location.href='#';">
+                    <img src="IMG/bass.jpg" class="card-img-top" alt="Basszusgitárok">
+                    <div class="card-body p-2 text-center">
+                        <h5 class="card-title">Basszusgitárok</h5>
                     </div>
                 </div>
-                
-                <!-- Other categories following the same pattern... -->
+            </div>
+            
+            <!-- Drums Category -->
+            <div class="col">
+                <div class="card h-100 shadow-sm hover-card" style="max-width: 12rem; cursor: pointer;" onclick="location.href='#';">
+                    <img src="IMG/dob.jpg" class="card-img-top" alt="Dobok">
+                    <div class="card-body p-2 text-center">
+                        <h5 class="card-title">Dobok</h5>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Piano Category -->
+            <div class="col">
+                <div class="card h-100 shadow-sm hover-card" style="max-width: 12rem; cursor: pointer;" onclick="location.href='#';">
+                    <img src="IMG/zongora.jpg" class="card-img-top" alt="Billentyűs hangszerek">
+                    <div class="card-body p-2 text-center">
+                        <h5 class="card-title">Billentyűs hangszerek</h5>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Winds Category -->
+            <div class="col">
+                <div class="card h-100 shadow-sm hover-card" style="max-width: 12rem; cursor: pointer;" onclick="location.href='#';">
+                    <img src="IMG/fuvos.jpg" class="card-img-top" alt="Fúvós hangszerek">
+                    <div class="card-body p-2 text-center">
+                        <h5 class="card-title">Fúvós hangszerek</h5>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Strings Category -->
+            <div class="col">
+                <div class="card h-100 shadow-sm hover-card" style="max-width: 12rem; cursor: pointer;" onclick="location.href='#';">
+                    <img src="IMG/vonos.jpg" class="card-img-top" alt="Vonós hangszerek">
+                    <div class="card-body p-2 text-center">
+                        <h5 class="card-title">Vonós hangszerek</h5>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+        
         <div class="product-list">
             <!-- Row 1 -->
-            <div class="product">
+            <div class="product hover-product">
                 <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
                 <div class="product-info">
                     <div class="product-details">
@@ -191,7 +221,7 @@
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div class="product hover-product">
                 <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
                 <div class="product-info">
                     <div class="product-details">
@@ -210,7 +240,7 @@
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div class="product hover-product">
                 <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
                 <div class="product-info">
                     <div class="product-details">
@@ -229,7 +259,7 @@
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div class="product hover-product">
                 <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
                 <div class="product-info">
                     <div class="product-details">
@@ -248,7 +278,7 @@
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div class="product hover-product">
                 <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
                 <div class="product-info">
                     <div class="product-details">
@@ -269,7 +299,7 @@
             </div>
 
             <!-- Row 2 -->
-            <div class="product">
+            <div class="product hover-product">
                 <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
                 <div class="product-info">
                     <div class="product-details">
@@ -288,7 +318,7 @@
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div class="product hover-product">
                 <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
                 <div class="product-info">
                     <div class="product-details">
@@ -307,7 +337,7 @@
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div class="product hover-product">
                 <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
                 <div class="product-info">
                     <div class="product-details">
@@ -326,7 +356,7 @@
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div class="product hover-product">
                 <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
                 <div class="product-info">
                     <div class="product-details">
@@ -347,7 +377,7 @@
             </div>
 
             <!-- Row 3 -->
-            <div class="product">
+            <div class="product hover-product">
                 <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
                 <div class="product-info">
                     <div class="product-details">
@@ -366,7 +396,7 @@
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div class="product hover-product">
                 <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
                 <div class="product-info">
                     <div class="product-details">
@@ -385,7 +415,7 @@
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div class="product hover-product">
                 <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
                 <div class="product-info">
                     <div class="product-details">
@@ -404,7 +434,7 @@
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div class="product hover-product">
                 <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
                 <div class="product-info">
                     <div class="product-details">
@@ -425,7 +455,7 @@
             </div>
 
             <!-- Row 4 -->
-            <div class="product">
+            <div class="product hover-product">
                 <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
                 <div class="product-info">
                     <div class="product-details">
@@ -444,7 +474,7 @@
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div class="product hover-product">
                 <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
                 <div class="product-info">
                     <div class="product-details">
@@ -463,7 +493,7 @@
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div class="product hover-product">
                 <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
                 <div class="product-info">
                     <div class="product-details">
@@ -482,8 +512,8 @@
                     </div>
                 </div>
             </div>
-        </div>
     </main>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="tailwind.config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
