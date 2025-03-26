@@ -536,3 +536,13 @@ nav ul li:hover ~ main::before {
         bottom: 2%;
     }
 }
+
+.hover-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+.hover-product:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}

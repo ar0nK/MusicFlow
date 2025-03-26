@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .tw-header { 
+    @apply bg-white shadow-md sticky top-0 z-50 px-5 py-3 flex justify-between items-center; 
+  }
+  .tw-logo { 
+    @apply text-2xl font-bold text-red-600 hover:text-red-400 transition-colors; 
+  }
+  .tw-search { 
+    @apply w-1/2 px-4 py-2 rounded-full border border-gray-400 focus:outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400; 
+  }
+  .tw-account-link { 
+    @apply text-gray-500 hover:text-red-600 transition-colors mx-3; 
+  }
+  .tw-nav-container { 
+    @apply bg-gray-200 p-3; 
+  }
+  .tw-nav-list { 
+    @apply flex gap-4 list-none; 
+  }
+  .tw-nav-item { 
+    @apply relative; 
+  }
+  .tw-nav-link { 
+    @apply text-gray-600 font-bold hover:text-red-600 transition-colors; 
+  }
+  .tw-dropdown { 
+    @apply absolute hidden bg-white shadow-md group-hover:block p-2; 
+  }
+  .tw-product-title { 
+    @apply text-xl font-bold text-gray-800; 
+  }
+  .tw-product-price { 
+    @apply text-lg font-semibold text-gray-600; 
+  }
+  .tw-btn-primary { 
+    @apply bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500 transition-colors; 
+  }
+
+  /* Carousel Components */
+  .tw-carousel { 
+    @apply w-4/5 mx-auto mb-3 md:w-11/12 sm:w-full; 
+  }
+  .tw-carousel-item { 
+    @apply h-60 md:h-40 sm:h-32; 
+  }
+  .tw-carousel-image { 
+    @apply h-full w-full object-contain max-h-40 md:max-h-35 sm:max-h-30; 
+  }
+  .tw-carousel-caption { 
+    @apply bg-black/70 rounded p-2 bottom-5 left-5 right-5 max-w-4/5 mx-auto; 
+  }
+
+  /* Card Components */
+  .tw-hover-card { 
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-lg bg-white rounded-lg overflow-hidden; 
+  }
+  .tw-card-body { 
+    @apply p-5; 
+  }
+  .tw-card-title { 
+    @apply font-semibold text-red-600 text-xl mb-3; 
+  }
+  .tw-card-text { 
+    @apply text-gray-500 mb-4; 
+  }
+
+  /* Utility Components */
+  .tw-text-muted { 
+    @apply text-gray-500; 
+  }
+  .tw-shadow { 
+    @apply shadow-md; 
+  }
+}
+
+/* Apply responsive styles using @screen */
+@screen md {
+  .tw-header { 
+    @apply flex-col items-start; 
+  }
+  .tw-search { 
+    @apply w-full my-3; 
+  }
+  .tw-nav-list { 
+    @apply flex-col; 
+  }
+  .tw-nav-item { 
+    @apply my-1; 
+  }
+  .tw-dropdown { 
+    @apply static w-full shadow-none; 
+  }
+}
