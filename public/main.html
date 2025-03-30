@@ -13,8 +13,65 @@
             <a href="#" class="logo"><img src="IMG/logo.png" alt="logo" title="logo" style="width: auto; height: 120px;"></a>
             <input type="text" class="search-bar form-control" placeholder="search bar">
             <div class="account-info">
-                <a href="#">Fiók</a> |
-                <a href="#">Kosár</a> |
+                <a href="#" data-bs-toggle="modal" data-bs-target="#authModal">Fiók</a> |
+
+                <!-- Authentication Modal -->
+                <div class="modal fade" id="authModal" data-bs-backdrop="false" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="authModalLabel">Bejelentkezés / Regisztráció</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezárás"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Tabs for Login and Register -->
+                                <ul class="nav nav-tabs" id="authTabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Bejelentkezés</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false">Regisztráció</button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content mt-3" id="authTabsContent">
+                                    <!-- Login Form -->
+                                    <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="loginEmail" class="form-label">Email cím</label>
+                                                <input type="email" class="form-control" id="loginEmail" placeholder="Email">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="loginPassword" class="form-label">Jelszó</label>
+                                                <input type="password" class="form-control" id="loginPassword" placeholder="Jelszó">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary w-100">Bejelentkezés</button>
+                                        </form>
+                                    </div>
+                                    <!-- Register Form -->
+                                    <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="registerEmail" class="form-label">Email cím</label>
+                                                <input type="email" class="form-control" id="registerEmail" placeholder="Email">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="registerPassword" class="form-label">Jelszó</label>
+                                                <input type="password" class="form-control" id="registerPassword" placeholder="Jelszó">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="registerConfirmPassword" class="form-label">Jelszó megerősítése</label>
+                                                <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Jelszó megerősítése">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary w-100">Regisztráció</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="javascript:void(0)">Kosár</a> |
                 <a href="#">Elérhetőség</a>
             </div>
         </header>
@@ -105,7 +162,8 @@
                         <div class="carousel-caption">
                             <h2>Első ajánlat</h2>
                             <p class="d-none d-md-block">Leírás az első ajánlathoz</p>
-                            <a href="termek_sablon.html" class="btn btn-primary">Részletek</a>
+      
+                                   <a href="termek_sablon.html" class="btn btn-primary">Részletek</a>
                         </div>
                     </div>
                     <div class="carousel-item">
