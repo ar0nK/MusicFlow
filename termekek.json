@@ -51,6 +51,59 @@
             "kepek":["/public/Hangszerek/ernieBall/kep1.jpg","/public/Hangszerek/ernieBall/kep2.jpg"]
             
         }
+    ],
+    "cintanyer":[
+        {
+            "id": 6,
+            "nev": "Zildjian A Custom box set + 18 A custom crash",
+            "ar": 376800,
+            "leiras":"A legendás A sorozatú cintányérok sokoldalúságukról ismertek, a szuper vékony és finom cintányéroktól az igazán nehéz cintányérokig, amelyek átvágják más hangszerek hangzását. A Zildjian Sound Lab nemrégiben kiegészítette őket - a jelenlegi termékcsalád íveinek és súlyainak módosításával megtalálták azt, ami az A sorozat hangzását olyan klasszikussá teszi napjaink minden zenei stílusában. Ez a csomag egy A Custom cintányérkészletet tartalmaz: 20' A Custom Ride, 14' A Custom HiHat, 16' A Custom Crash és 18' A Custom Crash.",
+            "kepek":["/public/Hangszerek/Zildjian A Custom box set + 18 A custom crash/1.jpg","/public/Hangszerek/Zildjian A Custom box set + 18 A custom crash/1.jpg","/public/Hangszerek/Zildjian A Custom box set + 18 A custom crash/3.jpg"],
+            "video":"<iframe width='1321' height='743' src='https://www.youtube.com/embed/I_RE03Fzm0E' title='Zildjian A Custom Cymbal Box Set Pack + FREE 18&quot; Crash Set (A20579-11-1010824P)' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
+        },
+        {
+            "id": 7,
+            "nev": "Zildjian A Sweet ride box set",
+            "ar": 381200,
+            "leiras":"A legendás A sorozatú cintányérok sokoldalúságukról ismertek, a szuper vékony és finom cintányéroktól az igazán nehéz cintányérokig, amelyek átvágják más hangszerek hangzását. A Zildjian Sound Lab nemrégiben kiegészítette őket - a jelenlegi termékcsalád íveinek és súlyainak módosításával megtalálták azt, ami az A sorozat hangzását olyan klasszikussá teszi napjaink minden zenei stílusában. Ez a csomag egy A sorozatú cintányérkészletet tartalmaz: 21' A Sweet Ride, 14' A New Beats HiHat, 16' A Medium Thin Crash és 18' A Medium Thin Crash.",
+            "kepek":["/public/Hangszerek/Zildjian A Sweet ride box set/1.jpg","/public/Hangszerek/Zildjian A Sweet ride box set/2.jpg","/public/Hangszerek/Zildjian A Sweet ride box set/3.jpg"],
+            "video":"<iframe width='1321' height='743' src='https://www.youtube.com/embed/MPXt6bhu3h8' title='Zildjian A Sweet Ride Cymbal Pack (A391-1051523L)' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
+        },
+        {
+            "id": 8,
+            "nev": "Zildjian K Box set",
+            "ar": 432400,
+            "leiras":"A K sorozat hangzásbeli öröksége a cég évszázados múltjára utal, sötét tónusokkal jellemezhető. A sorozat cintányérjainak hangja mély, meleg és kifejező, de sötét karakterük ellenére számos műfajban otthonosan mozognak, a jazztől a rockig. Ez a doboz a K sorozat cintányérokat tartalmazza: 20' K Ride, 14' K HiHat, 16' K Dark Thin Crash és 18' K Dark Crash Thin.",
+            "kepek":["/public/Hangszerek/Zildjian K Box set/1.jpg","/public/Hangszerek/Zildjian K Box set/2.jpg","/public/Hangszerek/Zildjian K Box set/3.jpg"],
+            "video":"<iframe width='1321' height='743' src='https://www.youtube.com/embed/bB0wwC_zCT4' title='Zildjian K Sweet Cymbal Pack Box Set (KS5791-1100520FF)' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
+        },
+        {
+            "id": 9,
+            "nev": "Zildjian K Custom Dark Box Set",
+            "ar": 436300,
+            "leiras":"A Zildjian K Custom Dark cintányérok a legnépszerűbbek közé tartoznak a profi dobosok körében. Ezek a cintányérok gazdag, meleg és száraz hangzással rendelkeznek, amely teljesen jellemző a 19. századi hagyományos török cintányérokra. A K Custom sorozatot az egyes cintányérok könnyedsége jellemzi, amelyek ennek ellenére nem veszítik el konkrétságukat és meleg kifejezőerejüket. A K Custom Dark szett a sorozat legkeresettebb és legkelendőbb méreteit tartalmazza: 14' Hi-Hat, 16' Crash, 18' Crash és 20' Ride. Más szóval: ha egyszer beszerezte ezt a szettet, akkor jó pár évre készen áll. Ha egy teljesen professzionális cintányérkészletet és kompromisszumok nélküli minőséget keres, akkor csak ajánlani tudjuk ezt a terméket.",
+            "kepek":["/public/Hangszerek/Zildjian K Custom Dark Box Set/1.jpg","/public/Hangszerek/Zildjian K Custom Dark Box Set/2.jpg","/public/Hangszerek/Zildjian K Custom Dark Box Set/3.jpg"],
+            "video":"<iframe width='1321' height='743' src='https://www.youtube.com/embed/stG-DHXqwxw' title='Zildjian K Custom Dark Box Set (KCD900-1122921O)' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
+        }
+
+    ],
+    "dobszereles":[
+        {
+            "id": 10,
+            "nev": "Gretsch Catalina Maple Satin Deep Cherry Burst Rock Set",
+            "ar": 355060,
+            "leiras":"A Gretsch Catalina juharfa dobfelszerelés kivételes hangzást, modern dizájnt és kényelmes játszhatóságot kínál, ami a dobosok kedvencévé teszi világszerte. Ez a szett a legendás Gretsch-formulájú fából készült testeket innovatív hardverfunkciókkal ötvözi, amelyek biztosítják a megbízhatóságot és a könnyű beállíthatóságot. A Catalina Maple ideális választás azoknak a játékosoknak, akik egy minőségi, jellegzetes hangzású és modern megjelenésű szettet keresnek. A hardver jellemzői közé tartozik a nagydob kerek 'gázkupak' rögzítőlemeze és az alacsony profilú GTS tom rögzítő rendszer, amely minimalizálja a kagylókkal való érintkezést, és lehetővé teszi a szabad rezonálást. A Gretsch jellegzetes T-Wing csavarjai és anyái szintén a csomag részét képezik, hogy megkönnyítsék a felállítást. Az öntött nagydob markolatokon lévő gumiszigetelők védik a fa karikákat a sérülésektől, és biztosítják a hangszer hosszú élettartamát. A testek 7 réteg juharfából készültek, 30 fokban lecsiszolt élekkel és belül természetes fényezéssel, ami hozzájárul a gazdag, telt hangzáshoz és a pontos kivetítéshez. A nagydobok teleszkópos lábakkal és hangolt fa karikákkal rendelkeznek, míg a tamok és a kisdobok tartós, 2,5 mm-es, háromszorosan hajlított karikákkal, amelyek maximális hangolási stabilitást biztosítanak. A Catalina Maple sorozat minden dobja Remo membránokkal van felszerelve, így már a dobozból kivéve professzionális hangminőséget biztosít. Ez a szett ötvözi a klasszikus Gretsch funkciókat a modern innovációkkal, így ideális választás minden szinten játszó játékosnak, aki egy erőteljes és elegáns hangszert keres.",
+            "kepek":["/public/Hangszerek/Gretsch Catalina Maple Satin Deep Cherry Burst Rock SetGretsch Catalina Maple Satin Deep Cherry Burst Rock Set/1.jpg","/public/Hangszerek/Gretsch Catalina Maple Satin Deep Cherry Burst Rock SetGretsch Catalina Maple Satin Deep Cherry Burst Rock Set/2.jpg","/public/Hangszerek/Gretsch Catalina Maple Satin Deep Cherry Burst Rock SetGretsch Catalina Maple Satin Deep Cherry Burst Rock Set/3.jpg"],
+            "video":"<iframe width='1321' height='743' src='https://www.youtube.com/embed/BxfotBthRUM' title='Gretsch Catalina Maple Drum Set Demo' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
+        },
+        {
+            "id": 11,
+            "nev": "Mapex Armory Ultramarine AR504S",
+            "ar": 502510,
+            "leiras":"Az Armory a nagyon népszerű Meridian Birch és Meridian Maple szériák helyettesítője. Ez egy olyan dobfelszerelés, amely a középkategóriában abszolút standardnak tekinthető, ráadásul a professzionális Saturn IV sorozatból vagy a Panther Concept Kitből ismert funkciókat hoz ebbe a kategóriába. Ezeknek a doboknak a teste juharból és nyírfából készült, hat rétegű, összesen 7,2 milliméter vastagságú. Tiszta, rezonáns hangzást biztosít. Újdonság a SONIClear élek használata, amelyek révén a membrán jobban érintkezik a dobtesttel, így a hangzás természetesebb, színesebb és erőteljesebb lesz. Szintén jelölve vannak az új tom fogantyúk és a padlótom lábak, amelyek korlátlanul rezonálnak ezekben a dobokban. Tartalmazza a vadonatúj króm vagy fekete hardvereket (tom tartó TH687S 2x, multiclamp AC910 2x ). A dobmechanika továbbfejlesztett kialakítást, gyári feszített Remo UT membránokat kínál. Ezek a szettek többféle összeállításban kaphatók, hogy tényleg minden dobos választhasson, és természetesen sokféle színben.",
+            "kepek":["/public/Hangszerek/Mapex Armory Ultramarine AR504S/1.jpg","/public/Hangszerek/Mapex Armory Ultramarine AR504S/2.jpg","/public/Hangszerek/Mapex Armory Ultramarine AR504S/3.jpg"],
+            "video":"<iframe width='1321' height='743' src='https://www.youtube.com/embed/VL1YRaU8R2Y' title='Mapex Armory Drum Set Demo' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
+        }
     ]
 
 }

@@ -7,4 +7,4 @@ Az Armory a nagyon népszerű Meridian Birch és Meridian Maple szériák helyet
 Tartalmazza a vadonatúj króm vagy fekete hardvereket (tom tartó TH687S 2x, multiclamp AC910 2x ). A dobmechanika továbbfejlesztett kialakítást, gyári feszített Remo UT membránokat kínál. Ezek a szettek többféle összeállításban kaphatók, hogy tényleg minden dobos választhasson, és természetesen sokféle színben.
 
 Videó:
-<iframe width="1321" height="743" src="https://www.youtube.com/embed/VL1YRaU8R2Y" title="Mapex Armory Drum Set Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width='1321' height='743' src='https://www.youtube.com/embed/VL1YRaU8R2Y' title='Mapex Armory Drum Set Demo' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>
