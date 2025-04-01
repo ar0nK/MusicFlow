@@ -103,7 +103,16 @@
             "leiras":"Az Armory a nagyon népszerű Meridian Birch és Meridian Maple szériák helyettesítője. Ez egy olyan dobfelszerelés, amely a középkategóriában abszolút standardnak tekinthető, ráadásul a professzionális Saturn IV sorozatból vagy a Panther Concept Kitből ismert funkciókat hoz ebbe a kategóriába. Ezeknek a doboknak a teste juharból és nyírfából készült, hat rétegű, összesen 7,2 milliméter vastagságú. Tiszta, rezonáns hangzást biztosít. Újdonság a SONIClear élek használata, amelyek révén a membrán jobban érintkezik a dobtesttel, így a hangzás természetesebb, színesebb és erőteljesebb lesz. Szintén jelölve vannak az új tom fogantyúk és a padlótom lábak, amelyek korlátlanul rezonálnak ezekben a dobokban. Tartalmazza a vadonatúj króm vagy fekete hardvereket (tom tartó TH687S 2x, multiclamp AC910 2x ). A dobmechanika továbbfejlesztett kialakítást, gyári feszített Remo UT membránokat kínál. Ezek a szettek többféle összeállításban kaphatók, hogy tényleg minden dobos választhasson, és természetesen sokféle színben.",
             "kepek":["/public/Hangszerek/Mapex Armory Ultramarine AR504S/1.jpg","/public/Hangszerek/Mapex Armory Ultramarine AR504S/2.jpg","/public/Hangszerek/Mapex Armory Ultramarine AR504S/3.jpg"],
             "video":"<iframe width='1321' height='743' src='https://www.youtube.com/embed/VL1YRaU8R2Y' title='Mapex Armory Drum Set Demo' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
+        },
+        {
+            "id": 12,
+            "nev": "Tama 50th Limited Starclassic Mirage Rock Kit",
+            "ar": 1060600,
+            "leiras":"Az átlátszó akriltestű, egyedi hangzású dobkészletek az 1970-es évek óta igen népszerűek. A márka limitált kiadású 50. Starclassic Mirage Rock Kit limitált szériájából az 50. limitált Starclassic Mirage Rock Kit a gazdag, ütős hangzás és a fekete nikkel hardver mellett teljes ellenállást biztosító, varratmentes akriltestekkel rendelkezik. Az MBA52RZBNS készlet két tomtartót (MC69) tartalmaz.",
+            "kepek":["/public/Hangszerek/Tama 50th Limited Starclassic Mirage Rock Kit/1.jpg","/public/Hangszerek/Tama 50th Limited Starclassic Mirage Rock Kit/2.jpg","/public/Hangszerek/Tama 50th Limited Starclassic Mirage Rock Kit/3.jpg"],
+            "video":"<iframe width='1321' height='743' src='https://www.youtube.com/embed/TsM4jA8zl9Q' title='TAMA 50th Anniversary Limited Starclassic Mirage' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
         }
+
     ]
 
 }
