@@ -9,4 +9,4 @@ Nemcsak a hangolás, hanem a használt karikák is hozzájárulnak a hangzáshoz
 A csomag a Star-Cast sorozat hardvereit is tartalmazza, amelyek stabilitásukról és nagy rezonanciájukról híresek. Az új kialakítás azt is lehetővé teszi, hogy a tompok közelebb kerüljenek egymáshoz, ami még kényelmesebbé teszi a játékot. A dobokon Evans és Tama membránokat találsz - konkrétan Evans G1 bevonatos és Tama clear Power Craft II a tamokon, vagy Evans clear EQ4 a nagydobon.
 
 Videó:
-<iframe width="1321" height="743" src="https://www.youtube.com/embed/1kYP4R4Ij1Q" title="Starclassic Performer DEMO by Hammerworld Magazine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width='1321' height='743' src='https://www.youtube.com/embed/1kYP4R4Ij1Q' title='Starclassic Performer DEMO by Hammerworld Magazine' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>
