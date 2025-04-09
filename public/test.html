@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicFlow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><img src="IMG/logo.png" alt="logo" title="logo" style="width: auto; height: 120px;"></a>
+        <input type="text" class="search-bar form-control" placeholder="search bar">
+        <div class="account-info">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#authModal">Fiók</a> |
+
+            <!-- Authentication Modal -->
+            <div class="modal fade" id="authModal" data-bs-backdrop="false" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="authModalLabel">Bejelentkezés / Regisztráció</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezárás"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Tabs for Login and Register -->
+                            <ul class="nav nav-tabs" id="authTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Bejelentkezés</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false">Regisztráció</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content mt-3" id="authTabsContent">
+                                <!-- Login Form -->
+                                <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="loginEmail" class="form-label">Email cím</label>
+                                            <input type="email" class="form-control" id="loginEmail" placeholder="Email">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="loginPassword" class="form-label">Jelszó</label>
+                                            <input type="password" class="form-control" id="loginPassword" placeholder="Jelszó">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100">Bejelentkezés</button>
+                                    </form>
+                                </div>
+                                <!-- Register Form -->
+                                <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="registerEmail" class="form-label">Email cím</label>
+                                            <input type="email" class="form-control" id="registerEmail" placeholder="Email">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="registerPassword" class="form-label">Jelszó</label>
+                                            <input type="password" class="form-control" id="registerPassword" placeholder="Jelszó">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="registerConfirmPassword" class="form-label">Jelszó megerősítése</label>
+                                            <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Jelszó megerősítése">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100">Regisztráció</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:void(0)">Kosár</a> |
+            <a href="#">Elérhetőség</a>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Akciók</a></li>
+            <li><a href="#">Gitár</a>
+                <ul>
+                    <li><a href="#">Klasszikus Gitárok</a></li>
+                    <li><a href="#">Akusztikus Gitárok</a></li>
+                    <li><a href="#">Elektromos Gitárok</a></li>
+                    <li><a href="#">Húrok</a></li>
+                    <li><a href="#">Pengetők</a></li>
+                    <li><a href="#">Gitárkombók</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Basszusgitár</a>
+                <ul>
+                    <li><a href="#">4-húros Basszusgitárok</a></li>
+                    <li><a href="#">5-húrosok Basszusgitárok</a></li>
+                    <li><a href="#">Húrok</a></li>
+                    <li><a href="#">Basszusgitár kombók</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Dob</a>
+                <ul>
+                    <li class="has-submenu">
+                        <a href="#">Akusztikus Dobok</a>
+                        <ul class="submenu">
+                            <li><a href="#">Akusztikus Dobszerelések</a></li>
+                            <li><a href="#">Pergődobok</a></li>
+                            <li><a href="#">Cintányér szettek</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#">Elektromos Dobok</a>
+                        <ul class="submenu">
+                            <li><a href="#">Elektromos Dobszerelések</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Billentyűk</a>
+                <ul>
+                    <li><a href="#">Digitális Zongorák</a></li>
+                    <li><a href="#">Szintetizátorok</a></li>
+                    <li><a href="#">MIDI</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Fúvosok</a>
+                <ul>
+                    <li><a href="#">Furulyák</a></li>
+                    <li><a href="#">Fuvolák</a></li>
+                    <li><a href="#">Szaxofonok</a></li>
+                    <li><a href="#">Harsonák</a></li>
+                    <li><a href="#">Trombiták</a></li>
+                    <li><a href="#">Tubák</a></li>
+                    <li><a href="#">Vadászkürtök</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Vonós</a>
+                <ul>
+                    <li><a href="#">Hegedűk</a></li>
+                    <li><a href="#">Brácsák</a></li>
+                    <li><a href="#">Csellók</a></li>
+                    <li><a href="#">Nagybőgők</a></li>
+                    <li><a href="#">Vonók</a></li>
+                    <li><a href="#">Vonós Tartozékok</a></li>
+                </ul>
+            </li>
+            <li class="filterek"><a href="#">Filterek</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            
+            <!-- Carousel Items -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/1.jpg" class="d-block w-100" alt="Első ajánlat">
+                    <div class="carousel-caption">
+                        <h2>Első ajánlat</h2>
+                        <p class="d-none d-md-block">Leírás az első ajánlathoz</p>
+  
+                               <a href="termek_sablon.html" class="btn btn-primary">Részletek</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/1.jpg" class="d-block w-100" alt="Második ajánlat">
+                    <div class="carousel-caption">
+                        <h2>Második ajánlat</h2>
+                        <p class="d-none d-md-block">Leírás a második ajánlathoz</p>
+                        <a href="#" class="btn btn-primary">Részletek</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/1.jpg" class="d-block w-100" alt="Harmadik ajánlat">
+                    <div class="carousel-caption">
+                        <h2>Harmadik ajánlat</h2>
+                        <p class="d-none d-md-block">Leírás a harmadik ajánlathoz</p>
+                        <a href="#" class="btn btn-primary">Részletek</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Előző</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Következő</span>
+        </button>
+    </div>
+    <div class="container py-5">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4">
+            <!-- Guitar Category -->
+            <div class="col">
+                <div class="card h-100 shadow-sm hover-card" style="max-width: 12rem; cursor: pointer;" onclick="location.href='#';">
+                    <img src="IMG/gitar.jpg" class="card-img-top" alt="Gitárok">
+                    <div class="card-body p-2 text-center">
+                        <h5 class="card-title">Gitárok</h5>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bass Category -->
+            <div class="col">
+                <div class="card h-100 shadow-sm hover-card" style="max-width: 12rem; cursor: pointer;" onclick="location.href='#';">
+                    <img src="IMG/bass.jpg" class="card-img-top" alt="Basszusgitárok">
+                    <div class="card-body p-2 text-center">
+                        <h5 class="card-title">Basszusgitárok</h5>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drums Category -->
+            <div class="col">
+                <div class="card h-100 shadow-sm hover-card" style="max-width: 12rem; cursor: pointer;" onclick="location.href='#';">
+                    <img src="IMG/dob.jpg" class="card-img-top" alt="Dobok">
+                    <div class="card-body p-2 text-center">
+                        <h5 class="card-title">Dobok</h5>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Piano Category -->
+            <div class="col">
+                <div class="card h-100 shadow-sm hover-card" style="max-width: 12rem; cursor: pointer;" onclick="location.href='#';">
+                    <img src="IMG/zongora.jpg" class="card-img-top" alt="Billentyűs hangszerek">
+                    <div class="card-body p-2 text-center">
+                        <h5 class="card-title">Billentyűs hangszerek</h5>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Winds Category -->
+            <div class="col">
+                <div class="card h-100 shadow-sm hover-card" style="max-width: 12rem; cursor: pointer;" onclick="location.href='#';">
+                    <img src="IMG/fuvos.jpg" class="card-img-top" alt="Fúvós hangszerek">
+                    <div class="card-body p-2 text-center">
+                        <h5 class="card-title">Fúvós hangszerek</h5>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Strings Category -->
+            <div class="col">
+                <div class="card h-100 shadow-sm hover-card" style="max-width: 12rem; cursor: pointer;" onclick="location.href='#';">
+                    <img src="IMG/vonos.jpg" class="card-img-top" alt="Vonós hangszerek">
+                    <div class="card-body p-2 text-center">
+                        <h5 class="card-title">Vonós hangszerek</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <div class="product-list">
+            <!-- Row 1 -->
+            <div class="product hover-product">
+                <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
+                <div class="product-info">
+                    <div class="product-details">
+                        <div>
+                            <strong class="product-category">Termék név</strong><br>
+                            kategória
+                        </div>
+                        <div>
+                            értékelés
+                        </div>
+                    </div>
+                    <p>leírás</p>
+                    <div class="product-purchase">
+                        <strong>ár</strong>
+                        <a href="#" class="btn btn-primary">Kosárba</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product hover-product">
+                <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
+                <div class="product-info">
+                    <div class="product-details">
+                        <div>
+                            <strong class="product-category">Termék név</strong><br>
+                            kategória
+                        </div>
+                        <div>
+                            értékelés
+                        </div>
+                    </div>
+                    <p>leírás</p>
+                    <div class="product-purchase">
+                        <strong>ár</strong>
+                        <a href="#" class="btn btn-primary">Kosárba</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product hover-product">
+                <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
+                <div class="product-info">
+                    <div class="product-details">
+                        <div>
+                            <strong class="product-category">Termék név</strong><br>
+                            kategória
+                        </div>
+                        <div>
+                            értékelés
+                        </div>
+                    </div>
+                    <p>leírás</p>
+                    <div class="product-purchase">
+                        <strong>ár</strong>
+                        <a href="#" class="btn btn-primary">Kosárba</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product hover-product">
+                <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
+                <div class="product-info">
+                    <div class="product-details">
+                        <div>
+                            <strong class="product-category">Termék név</strong><br>
+                            kategória
+                        </div>
+                        <div>
+                            értékelés
+                        </div>
+                    </div>
+                    <p>leírás</p>
+                    <div class="product-purchase">
+                        <strong>ár</strong>
+                        <a href="#" class="btn btn-primary">Kosárba</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product hover-product">
+                <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
+                <div class="product-info">
+                    <div class="product-details">
+                        <div>
+                            <strong class="product-category">Termék név</strong><br>
+                            kategória
+                        </div>
+                        <div>
+                            értékelés
+                        </div>
+                    </div>
+                    <p>leírás</p>
+                    <div class="product-purchase">
+                        <strong>ár</strong>
+                        <a href="#" class="btn btn-primary">Kosárba</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="product hover-product">
+                <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
+                <div class="product-info">
+                    <div class="product-details">
+                        <div>
+                            <strong class="product-category">Termék név</strong><br>
+                            kategória
+                        </div>
+                        <div>
+                            értékelés
+                        </div>
+                    </div>
+                    <p>leírás</p>
+                    <div class="product-purchase">
+                        <strong>ár</strong>
+                        <a href="#" class="btn btn-primary">Kosárba</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product hover-product">
+                <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
+                <div class="product-info">
+                    <div class="product-details">
+                        <div>
+                            <strong class="product-category">Termék név</strong><br>
+                            kategória
+                        </div>
+                        <div>
+                            értékelés
+                        </div>
+                    </div>
+                    <p>leírás</p>
+                    <div class="product-purchase">
+                        <strong>ár</strong>
+                        <a href="#" class="btn btn-primary">Kosárba</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product hover-product">
+                <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
+                <div class="product-info">
+                    <div class="product-details">
+                        <div>
+                            <strong class="product-category">Termék név</strong><br>
+                            kategória
+                        </div>
+                        <div>
+                            értékelés
+                        </div>
+                    </div>
+                    <p>leírás</p>
+                    <div class="product-purchase">
+                        <strong>ár</strong>
+                        <a href="#" class="btn btn-primary">Kosárba</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product hover-product">
+                <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
+                <div class="product-info">
+                    <div class="product-details">
+                        <div>
+                            <strong class="product-category">Termék név</strong><br>
+                            kategória
+                        </div>
+                        <div>
+                            értékelés
+                        </div>
+                    </div>
+                    <p>leírás</p>
+                    <div class="product-purchase">
+                        <strong>ár</strong>
+                        <a href="#" class="btn btn-primary">Kosárba</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="product hover-product">
+                <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
+                <div class="product-info">
+                    <div class="product-details">
+                        <div>
+                            <strong class="product-category">Termék név</strong><br>
+                            kategória
+                        </div>
+                        <div>
+                            értékelés
+                        </div>
+                    </div>
+                    <p>leírás</p>
+                    <div class="product-purchase">
+                        <strong>ár</strong>
+                        <a href="#" class="btn btn-primary">Kosárba</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product hover-product">
+                <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
+                <div class="product-info">
+                    <div class="product-details">
+                        <div>
+                            <strong class="product-category">Termék név</strong><br>
+                            kategória
+                        </div>
+                        <div>
+                            értékelés
+                        </div>
+                    </div>
+                    <p>leírás</p>
+                    <div class="product-purchase">
+                        <strong>ár</strong>
+                        <a href="#" class="btn btn-primary">Kosárba</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product hover-product">
+                <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
+                <div class="product-info">
+                    <div class="product-details">
+                        <div>
+                            <strong class="product-category">Termék név</strong><br>
+                            kategória
+                        </div>
+                        <div>
+                            értékelés
+                        </div>
+                    </div>
+                    <p>leírás</p>
+                    <div class="product-purchase">
+                        <strong>ár</strong>
+                        <a href="#" class="btn btn-primary">Kosárba</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product hover-product">
+                <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
+                <div class="product-info">
+                    <div class="product-details">
+                        <div>
+                            <strong class="product-category">Termék név</strong><br>
+                            kategória
+                        </div>
+                        <div>
+                            értékelés
+                        </div>
+                    </div>
+                    <p>leírás</p>
+                    <div class="product-purchase">
+                        <strong>ár</strong>
+                        <a href="#" class="btn btn-primary">Kosárba</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="product hover-product">
+                <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
+                <div class="product-info">
+                    <div class="product-details">
+                        <div>
+                            <strong class="product-category">Termék név</strong><br>
+                            kategória
+                        </div>
+                        <div>
+                            értékelés
+                        </div>
+                    </div>
+                    <p>leírás</p>
+                    <div class="product-purchase">
+                        <strong>ár</strong>
+                        <a href="#" class="btn btn-primary">Kosárba</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product hover-product">
+                <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
+                <div class="product-info">
+                    <div class="product-details">
+                        <div>
+                            <strong class="product-category">Termék név</strong><br>
+                            kategória
+                        </div>
+                        <div>
+                            értékelés
+                        </div>
+                    </div>
+                    <p>leírás</p>
+                    <div class="product-purchase">
+                        <strong>ár</strong>
+                        <a href="#" class="btn btn-primary">Kosárba</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product hover-product">
+                <img src="https://via.placeholder.com/200" alt="Termék kép" class="product-image">
+                <div class="product-info">
+                    <div class="product-details">
+                        <div>
+                            <strong class="product-category">Termék név</strong><br>
+                            kategória
+                        </div>
+                        <div>
+                            értékelés
+                        </div>
+                    </div>
+                    <p>leírás</p>
+                    <div class="product-purchase">
+                        <strong>ár</strong>
+                        <a href="#" class="btn btn-primary">Kosárba</a>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
