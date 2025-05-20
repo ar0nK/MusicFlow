@@ -10,7 +10,7 @@ const ngrok = require('ngrok');
 app.use(cors());
 app.use(bodyParser.json());
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'main.html'));
+    res.sendFile(path.join(__dirname, 'public', 'test.html'));
 });
 app.use(express.static(path.join(__dirname, 'public')));
 

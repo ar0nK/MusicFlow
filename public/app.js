@@ -26,7 +26,7 @@ function betoltTermekek(kategoria) {
 
     termekek[kategoria].forEach(termek => {
         const kepUrl = termek.kepek && termek.kepek.length > 0 
-            ? `${location.origin}/public/${termek.kepek[0]}` // Javított elérési út
+            ? `${termek.kepek[0]}` // Javított elérési út
             : 'https://via.placeholder.com/200';
 
         const termekElem = `
