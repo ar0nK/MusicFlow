@@ -121,7 +121,7 @@
             "video":"<iframe width='1321' height='743' src='https://www.youtube.com/embed/1kYP4R4Ij1Q' title='Starclassic Performer DEMO by Hammerworld Magazine' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
         },
         {
-            "id": 13,
+            "id": 14,
             "nev": "Tama Starclassic Performer Sky Blue Aurora Rock Set II",
             "ar":  753890,
             "leiras":"A Tama Starclassic sorozat 1994 óta van a piacon. Azóta folyamatosan fejlődik, és még a legigényesebb dobosoknak is professzionális teljesítményt nyújt elfogadható áron. A Performer sorozat aztán ennek a családnak a legújabb tagja, és a többi szetthez hasonlóan itt is megtalálhatók a nagyra értékelt és népszerű hibrid korpuszok, amelyek erőteljes és komplex hangzást biztosítanak ezeknek a szetteknek, széles körű kifejezőerővel. A tamok két réteg juharból és négy réteg nyírfából (6 mm) készülnek, míg a nagydob két réteg juharból és öt réteg nyírfából (7 mm). Hangzásilag ez a szett a juhar melegségével és a nyírfa tisztaságával és tisztaságával rendelkezik. A hangzás tiszta, átható és kiegyensúlyozott. Nemcsak a hangolás, hanem a felhasznált karikák is hozzájárulnak a hangzáshoz. Ezért a Tama tervezői különös figyelmet fordítottak erre az elemre. Ezen a szetten öntött cinkből készült karikákat találsz, amelyek sűrűbbek és szabályosabb formát biztosítanak, mint a hagyományos, hajlított karikák. A hangolás ennek köszönhetően pontosabb és következetesebb, hangzásilag pedig a dobok erősebb hangzást biztosítanak a peremütéseknél, átütőbb támadást vagy tiszta és erősen rezonáló magasakat. A csomag a Star-Cast sorozat hardvereit is tartalmazza, amelyek stabilitásukról és nagyszerű rezonanciájukról híresek. Az új kialakítás azt is lehetővé teszi, hogy a tompok közelebb kerüljenek egymáshoz, ami még kényelmesebbé teszi a játékot. A dobokon Evans és Tama membránokat találsz - konkrétan Evans G1 bevonatos és Tama clear Power Craft II membránokat a tamokon, illetve Evans clear EQ4 membránokat a nagydobon.",
@@ -131,6 +131,17 @@
 
 
 
+    ],
+    "negyhurosBasszusGitarok":[
+        {
+            "id": 15,
+            "nev": "Cort Action PJ OPB elektromos basszusgitár",
+            "ar": 74500,
+            "leiras":"Az Action PJ a Cort basszusok belépő szintű vonala, amelyet a kezdő játékosok is értékelni fognak. A hangszer teste nyárfából készült, és J/P típusú hangszedőkkel van felszerelve, amelyek hangzásilag a rocktól a jazzig mindent lefednek. Ezeket két hangerő-potenciométerrel és egy hangszínszabályzóval szabályozzák. A nyak kanadai kemény juharból van esztergálva és rózsafa fogólappal van ellátva. Természetesen a hangszer ergonómikus formája és nagyon könnyű súlya miatt órákig tartó játékra is alkalmas.",
+            "kepek":["/public/Hangszerek/Gitarok/Basszusgitárok/4_huros/Cort_Action_PJ_OPB/Co_ActionPJ_OPB_1.jpg","/public/Hangszerek/Gitarok/Basszusgitárok/4_huros/Cort_Action_PJ_OPB/Co_ActionPJ_OPB_2.jpg"],
+            "video":"<iframe width='560' height='315' src='https://www.youtube.com/watch?v=xyeRJa4S8PA' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
+
+        }
     ]
 
 }
