@@ -1,6 +1,6 @@
 // Ellenőrizzük, hogy a termékek már a LocalStorage-ban vannak-e
 if (!localStorage.getItem('termekek')) {
-    fetch('./termekek.json') // Javított elérési út!
+    fetch('../termekek.json') // Javított elérési út!
         .then(response => {
             if (!response.ok) {
                 throw new Error('Hiba a termekek.json betöltésekor');
@@ -23,6 +23,7 @@ function betoltTermekek(kategoria) {
     termekLista.innerHTML = '';
 
     if (!termekek[kategoria]) {
+        console.log(kategoria);
         console.warn(`Nincs ilyen kategória: ${kategoria}`);
         return;
     }
@@ -32,6 +33,7 @@ function betoltTermekek(kategoria) {
             ? `${termek.kepek[0]}` // Javított elérési út
             : 'https://via.placeholder.com/200';
         termekLista.innerHTML += createProductCard(termek, kategoria);
+        
     });
 }
 
@@ -51,7 +53,7 @@ function renderAllProducts() {
 // Termék kártya HTML generálása
 function createProductCard(termek, kategoria) {
     const kepUrl = termek.kepek && termek.kepek.length > 0 
-        ? `${location.origin}/public/${termek.kepek[0]}`
+        ? `${termek.kepek[0]}`
         : 'https://via.placeholder.com/200';
     return `
         <div class="product hover-product">
@@ -77,7 +79,11 @@ const kategoriaMap = {
     "Elektromos Gitárok": "elektromosGitarok",
     "Akusztikus Gitárok": "akusztikusGitarok",
     "Klasszikus Gitárok": "klasszikusGitarok",
-    "Húrok": "hurok"
+    "Húrok": "hurok",
+    "Akusztikus Dobszerelések":"akDobsz",
+    "Pergődobok":"pergodobok",
+    "Cintányér szettek":"cintanyer"
+    
 };
 
 // Navigációs menü eseményfigyelő
@@ -94,3 +100,4 @@ if (document.querySelectorAll('nav ul li ul li a').length) {
         });
     });
 }
+
