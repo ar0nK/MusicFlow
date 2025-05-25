@@ -14,4 +14,4 @@ Műszaki adatok
 - String Mechanics: MAG
 - Párnák: Remo USA
 
-Videó: <iframe width="1321" height="743" src="https://www.youtube.com/embed/WDS7vEJ0hJY" title="DW 14x5.5 Design Series Black Nickel over Brass Snare Drum with MAG Throw off" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Videó: <iframe width='1321' height='743' src='https://www.youtube.com/embed/WDS7vEJ0hJY' title='DW 14x5.5 Design Series Black Nickel over Brass Snare Drum with MAG Throw off' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>

@@ -207,5 +207,42 @@
             "video":"<iframe width='560' height='315' src='https://www.youtube.com/watch?v=kcEYu02yeWY' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
 
         }
+    ],
+    
+    "pergodob":[
+        {
+            "id": 23,
+            "nev": "DW 14 x 5,5 Performance Ebony Stain",
+            "ar": 212500,
+            "leiras":"A DW Performance dobok professzionális dobok, minden igényt kielégítő felszereléssel, és a márka kínálatának zászlóshajója. Fejlesztésük és gyártásuk során minden részletre odafigyeltek, és semmilyen kompromisszumot nem kötöttek. A Custom Shop hangszerek ihlették őket, amelyek minőségét a sorozatgyártású változatban kínálják. Ez a kisdob 10 réteg észak-amerikai juharból készült, amelyet a Custom Shop vonalban is használnak. Sokoldalú hangzást kínál, hangja jól kiegyensúlyozott a világos és a sötét között, színes, gyors támadással. True-Pitch hangolócsavarokkal, Quarter Turret kagylókkal és MAG húrmechanikával rendelkezik. Remo USA fújtatót használnak.",
+            "kepek":["/Hangszerek/Dobok/Akusztikus/Pergődob/DW 14 x 5,5 Performance Ebony Stain/9951156_800.jpg"],
+            "video":"<iframe width='1321' height='743' src='https://www.youtube.com/embed/WDS7vEJ0hJY' title='DW 14x5.5 Design Series Black Nickel over Brass Snare Drum with MAG Throw off' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
+        },
+        {
+            "id": 24,
+            "nev": "Sonor 13 x 5,75 Benny Greb Signature Brass",
+            "ar": 400000,
+            "leiras":"Tíz év telt el azóta, hogy Benn Greb német dobossal együttműködve piacra került az első csörgődob, így a Sonor és Benn úgy döntött, hogy ezt a becsületesen elkészített csörgődobot új szabványokhoz és technológiákhoz igazítja. A termékcsalád tartalmaz egy klasszikus snare-t skandináv nyírfa kivitelben és egy új sárgaréz változatot, amely nagyon ütős hangzással és nagyszerű dizájnnal rendelkezik. A snare MonoRail csillapítót és Dual Glide húrokat tartalmaz. Ez a snare sárgarézből készült, és egyedi kialakításában egy ízléses csík fut végig az 1,2 mm-es test közepén. A hangzás nagyon rugalmas, meleg, lekerekített, és a poptól a funkon át a punkig és a hard rockig minden stílusú dobos értékelni fogja. A krómozott hardver és a vintage kagylóhéjak ezután teszik teljessé ennek a snare-nek a vidám megjelenését.",
+            "kepek":["/Hangszerek/Dobok/Akusztikus/Pergődob/Sonor 13 x 5,75 Benny Greb Signature Brass/ssd-1305-bg-sdb-20-main.jpg"],
+            "video":"<iframe width='782' height='440' src='https://www.youtube.com/embed/llgSUmYp8Ow' title='The new BENNY GREB Signature Snares by SONOR' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
+        },
+        {
+            "id": 25,
+            "nev": "Sonor 14 x 5,75 Kompressor Chrome Steel",
+            "ar": 110850,
+            "leiras":"14' x 5.75' kompresszor krómozott acél",
+            "kepek":["/Hangszerek/Dobok/Akusztikus/Pergődob/Sonor 14 x 5,75 Kompressor Chrome Steel/17710201_KS14x5.75SDS_front.jpg"],
+            "video":"<iframe width='782' height='440' src='https://www.youtube.com/embed/ArEt7I8mK3I' title='SONOR KOMPRESSOR – Snare Presentation' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
+        },
+        {
+            "id": 26,
+            "nev": "Tama 14 x 6,5 Starclassic Performer Caramel Aurora",
+            "ar": 143000,
+            "leiras":"Ez a Starclassic sorozatba tartozó kisdob négy réteg nyírfából és két réteg juharból készült, összesen 6 mm vastagsággal, ami gyönyörű tiszta és meleg hangzást biztosít. A stancolt karikákkal kombinálva tiszta, tiszta és tökéletesen kiegyensúlyozott hangzású dobot kapunk, amely megtartja a jellegzetes, átütő snare hangzást. Röviden, ezek a dobok gyakorlatilag bármilyen felállásba illeszkednek.",
+            "kepek":["/Hangszerek/Dobok/Akusztikus/Pergődob/Tama 14 x 6,5 Starclassic Performer Caramel Aurora/tama-starclassic-performer-mbss65-car-caramel-aurora-14-x-6-5-snare-drum.jpg"],
+            "video":"<iframe width='1321' height='743' src='https://www.youtube.com/embed/hbetKU3wr8A' title='Tama Starclassic Performer 14x6 5&#39;&#39; Snare Drum, Caramel Aurora' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
+        }
+
     ]
+    
 }
