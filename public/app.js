@@ -80,9 +80,10 @@ const kategoriaMap = {
     "Akusztikus Gitárok": "akusztikusGitarok",
     "Klasszikus Gitárok": "klasszikusGitarok",
     "Húrok": "hurok",
-    "Akusztikus Dobszerelések":"akDobsz",
+    "Akusztikus Dobszerelések":"akdobok",
     "Pergődobok":"pergodobok",
-    "Cintányér szettek":"cintanyer"
+    "Cintányér szettek":"cintanyer",
+    "Elektromos Dobszerelések":"elektromosDobsz",
     
 };
 
