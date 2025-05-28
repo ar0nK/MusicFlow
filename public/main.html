@@ -260,7 +260,9 @@
     </div>
         
     <!--Termékek-->
-    <div class="product-list"> </div>
+    <div class="container">
+    <div class="product-list row"> </div>
+    </div>
 
     </main>
     <script src="tailwind.config.js"></script>
@@ -272,7 +274,7 @@ fetch("termekek.json")
     .then(response => response.json())
     .then(data => {
         const productList = document.querySelector(".product-list");
-        productList.innerHTML = ""; // Töröljük a placeholder-eket
+        //productList.innerHTML = ""; // Töröljük a placeholder-eket
 
         const allProducts = Object.values(data).flat();
 
@@ -281,7 +283,7 @@ fetch("termekek.json")
             const image = product.kepek?.[0] || "https://via.placeholder.com/200";
 
             const card = document.createElement("div");
-            card.className = "product hover-product";
+            card.className = "product hover-product col-mb-4";
             card.innerHTML = `
                 <img src="${image}" alt="${product.nev}" class="product-image">
                 <div class="product-info">
