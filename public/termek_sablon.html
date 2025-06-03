@@ -65,7 +65,9 @@
 <body>
     <header>
         <a href="main.html" class="logo"><img src="IMG/logo.png" alt="logo" title="logo" style="width: auto; height: 120px;"></a>
-        <input type="text" class="search-bar form-control" placeholder="search bar">
+        
+        <input type="text" id="searchBar" class="search-bar form-control" placeholder="Keresés...">
+        
         <div class="account-info">
             <a href="#" data-bs-toggle="modal" data-bs-target="#authModal">Fiók</a> |
 
@@ -132,69 +134,62 @@
 
     <nav>
         <ul>
-            <li><a href="#">Akciók</a></li>
-            <li><a href="#">Gitár</a>
+            <li><a href="main.html">Akciók</a></li>
+            <li><a href="main.html" data-filter="klasszikusGitarok,akusztikusGitarok,elektromosGitarok,hurok">Gitár</a>
                 <ul>
-                    <li><a href="#">Klasszikus Gitárok</a></li>
-                    <li><a href="#">Akusztikus Gitárok</a></li>
-                    <li><a href="#">Elektromos Gitárok</a></li>
-                    <li><a href="#">Húrok</a></li>
-                    <li><a href="#">Pengetők</a></li>
-                    <li><a href="#">Gitárkombók</a></li>
+                    <li><a href="main.html" data-filter="klasszikusGitarok">Klasszikus Gitárok</a></li>
+                    <li><a href="main.html" data-filter="akusztikusGitarok">Akusztikus Gitárok</a></li>
+                    <li><a href="main.html" data-filter="elektromosGitarok">Elektromos Gitárok</a></li>
+                    <li><a href="main.html" data-filter="hurok">Húrok</a></li>
                 </ul>
             </li>
-            <li><a href="#">Basszusgitár</a>
+            <li><a href="main.html" data-filter="negyhurosBasszusGitarok,othurosBasszusGitarok">Basszusgitár</a>
                 <ul>
-                    <li><a href="#">4-húros Basszusgitárok</a></li>
-                    <li><a href="#">5-húrosok Basszusgitárok</a></li>
-                    <li><a href="#">Húrok</a></li>
-                    <li><a href="#">Basszusgitár kombók</a></li>
+                    <li><a href="main.html" data-filter="negyhurosBasszusGitarok">4-húros Basszusgitárok</a></li>
+                    <li><a href="main.html" data-filter="othurosBasszusGitarok">5-húrosok Basszusgitárok</a></li>
                 </ul>
             </li>
-            <li><a href="#">Dob</a>
+            <li><a href="main.html" data-filter="akdobok,pergodob,cintanyer,elektromosDobok">Dob</a>
                 <ul>
                     <li class="has-submenu">
-                        <a href="#">Akusztikus Dobok</a>
+                        <a href="main.html" data-filter="akdobok,pergodob,cintanyer">Akusztikus Dobok</a>
                         <ul class="submenu">
-                            <li><a href="#">Akusztikus Dobszerelések</a></li>
-                            <li><a href="#">Pergődobok</a></li>
-                            <li><a href="#">Cintányér szettek</a></li>
+                            <li><a href="main.html" data-filter="akdobok">Akusztikus Dobszerelések</a></li>
+                            <li><a href="main.html" data-filter="pergodob">Pergődobok</a></li>
+                            <li><a href="main.html" data-filter="cintanyer">Cintányér szettek</a></li>
                         </ul>
                     </li>
-                    <li class="has-submenu">
-                        <a href="#">Elektromos Dobok</a>
-                        <ul class="submenu">
-                            <li><a href="#">Elektromos Dobszerelések</a></li>
-                        </ul>
+                    <li>
+                        <a href="main.html" data-filter="elektromosDobok">Elektromos Dobok</a>
                     </li>
                 </ul>
             </li>
-            <li><a href="#">Billentyűk</a>
+            <li><a href="main.html">Billentyűk</a>
                 <ul>
-                    <li><a href="#">Digitális Zongorák</a></li>
-                    <li><a href="#">Szintetizátorok</a></li>
-                    <li><a href="#">MIDI</a></li>
+                    <li><a href="main.html">Digitális Zongorák</a></li>
+                    <li><a href="main.html">Szintetizátorok</a></li>
+                    <li><a href="main.html">MIDI</a></li>
                 </ul>
             </li>
-            <li><a href="#">Fúvosok</a>
+            <li><a href="main.html">Fúvosok</a>
                 <ul>
-                    <li><a href="#">Furulyák</a></li>
-                    <li><a href="#">Fuvolák</a></li>
-                    <li><a href="#">Szaxofonok</a></li>
-                    <li><a href="#">Harsonák</a></li>
-                    <li><a href="#">Trombiták</a></li>
-                    <li><a href="#">Tubák</a></li>
-                    <li><a href="#">Vadászkürtök</a></li>
+                    <li><a href="main.html">Furulyák</a></li>
+                    <li><a href="main.html">Fuvolák</a></li>
+                    <li><a href="main.html">Szaxofonok</a></li>
+                    <li><a href="main.html">Harsonák</a></li>
+                    <li><a href="main.html">Trombiták</a></li>
+                    <li><a href="main.html">Tubák</a></li>
+                    <li><a href="main.html">Vadászkürtök</a></li>
                 </ul>
             </li>
-            <li><a href="#">Vonós</a>
+            <li><a href="main.html">Vonós</a>
                 <ul>
-                    <li><a href="#">Hegedűk</a></li>
-                    <li><a href="#">Brácsák</a></li>
-                    <li><a href="#">Csellók</a></li>
-                    <li><a href="#">Nagybőgők</a></li>
-                    <li><a href="#">Vonók</a></li>
-                    <li><a href="#">Vonós Tartozékok</a></li>
+                    <li><a href="main.html">Hegedűk</a></li>
+                    <li><a href="main.html">Brácsák</a></li>
+                    <li><a href="main.html">Csellók</a></li>
+                    <li><a href="main.html">Nagybőgők</a></li>
+                    <li><a href="main.html">Vonók</a></li>
+                    <li><a href="main.html">Vonós Tartozékok</a></li>
                 </ul>
             </li>
             <li class="filterek"><a href="#">Filterek</a></li>
@@ -205,18 +200,18 @@
     <main class="container-fluid mt-5">
         <div class="row justify-content-center">
             <!-- Left Column: Carousel and Thumbnails - Made larger -->
-            <div class="col-xl-7 col-lg-8">
+            <div class="col-xl-5 col-lg-6">
                 <!-- Carousel for product images and video -->
                 <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="" class="d-block w-100" alt="Termék kép 1">
+                            <img src="" class="d-block w-90" alt="Termék kép 1">
                         </div>
                         <div class="carousel-item">
-                            <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/2.jpg" class="d-block w-100" alt="Termék kép 2">
+                            <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/2.jpg" class="d-block w-90" alt="Termék kép 2">
                         </div>
                         <div class="carousel-item">
-                            <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/3.jpg" class="d-block w-100" alt="Termék kép 3">
+                            <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/3.jpg" class="d-block w-90" alt="Termék kép 3">
                         </div>
                         <div class="carousel-item d-flex align-items-center justify-content-center">
                             <div style="width: 95%; max-width: 800px;">
@@ -266,10 +261,9 @@
                     <div class="p-4 bg-light rounded">
                         <div id="fullDescription">
                             <p class="mb-3">
-                                A legendás A sorozatú cintányérok sokoldalúságukról ismertek, a szuper vékony és finom cintányéroktól az igazán nehéz cintányérokig, amelyek átvágják más hangszerek hangzását. A Zildjian Sound Lab nemrégiben kiegészítette őket - a jelenlegi termékcsalád íveinek és súlyainak módosításával megtalálták azt, ami az A sorozat hangzását olyan klasszikussá teszi napjaink minden zenei stílusában.
-                            </p>
+                               
                             <p class="mb-0">
-                                Ez a csomag egy A Custom cintányérkészletet tartalmaz: 20" A Custom Ride, 14" A Custom HiHat, 16" A Custom Crash és 18" A Custom Crash.
+                                
                             </p>
                         </div>
                     </div>
