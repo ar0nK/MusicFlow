@@ -11,7 +11,9 @@
 <body>
     <header>
         <a href="#" class="logo"><img src="IMG/logo.png" alt="logo" title="logo" style="width: auto; height: 120px;"></a>
-        <input type="text" class="search-bar form-control" placeholder="search bar">
+        
+        <input type="text" id="searchBar" class="search-bar form-control" placeholder="Keresés...">
+        
         <div class="account-info">
             <a href="#" data-bs-toggle="modal" data-bs-target="#authModal">Fiók</a> |
 
@@ -278,8 +280,8 @@ function renderProducts(products) {
     const img = prod.kepek?.[0] || "https://via.placeholder.com/200";
     const short = prod.leiras?.slice(0, 120) + "…" || "";
     productList.insertAdjacentHTML("beforeend", `
-      <div class="product hover-product" onclick="viewProduct(${prod.id})">
-        <img src="${img}" class="product-image" alt="${prod.nev}">
+      <div class="product hover-product">
+        <img src="${img}" class="product-image" alt="${prod.nev}" onclick="viewProduct(${prod.id})">
         <div class="product-info">
           <div class="product-details">
             <strong class="product-category">${prod.nev}</strong>
@@ -287,13 +289,34 @@ function renderProducts(products) {
           <p>${short}</p>
           <div class="product-purchase">
             <strong>${prod.ar.toLocaleString()} Ft</strong>
-            <a href="#" class="btn btn-primary" >Kosárba</a>
+            <button class="btn btn-primary add-to-cart-btn" data-id="${prod.id}">Kosárba</button>
           </div>
         </div>
       </div>
     `);
   });
 }
+
+// Delegált eseménykezelő a kosárba gombokra
+document.addEventListener("click", function(e) {
+  if (e.target.classList.contains("add-to-cart-btn")) {
+    e.stopPropagation();
+    e.preventDefault();
+    const id = Number(e.target.getAttribute("data-id"));
+    const allProducts = JSON.parse(localStorage.getItem("osszesTermek") || "[]");
+    const termek = allProducts.find(t => t.id === id);
+    if (!termek) return alert("Termék nem található!");
+    let kosar = JSON.parse(localStorage.getItem("kosar") || "[]");
+    const idx = kosar.findIndex(t => t.id === termek.id);
+    if (idx > -1) {
+      kosar[idx].mennyiseg += 1;
+    } else {
+      kosar.push({ ...termek, mennyiseg: 1 });
+    }
+    localStorage.setItem("kosar", JSON.stringify(kosar));
+    alert("A termék a kosárba került!");
+  }
+});
 
 function setupFilters(products) {
   document.querySelectorAll("a[data-filter]").forEach(a => {
@@ -340,14 +363,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       featured.forEach((product, i) => {
         const img = product.kepek?.[0] || "https://via.placeholder.com/800x300";
-        const short = product.leiras?.slice(0, 100) + "…" || "";
+        const short = product.leiras?.slice(0, 200) + "…" || "";
 
         const item = document.createElement("div");
         item.className = "carousel-item" + (i === 0 ? " active" : "");
         item.innerHTML = `
           <img src="${img}" class="d-block w-100" alt="${product.nev}">
           <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
-            <h5>${product.nev}</h5>
+            <h2>${product.nev}</h2>
             <p>${short}</p>
             <button class="btn btn-primary" onclick="viewProduct(${product.id})">Részletek</button>
           </div>
@@ -360,6 +383,16 @@ document.addEventListener("DOMContentLoaded", () => {
         indicator.setAttribute("data-bs-slide-to", i.toString());
         if (i === 0) indicator.className = "active";
         indicators.appendChild(indicator);
+
+        // 🔍 VALÓS IDEJŰ KERESÉS
+        document.getElementById("searchBar").addEventListener("input", () => {
+            const query = document.getElementById("searchBar").value.toLowerCase().trim();
+            const filtered = allProducts.filter(p =>
+            p.nev.toLowerCase().includes(query) ||
+            p.leiras?.toLowerCase().includes(query)
+            );
+            renderProducts(filtered);
+        });
       });
     });
 });

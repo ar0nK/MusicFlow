@@ -7,6 +7,60 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="main.js"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom styles for zoom modal */
+        .zoom-modal .modal-dialog {
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+        
+        .zoom-modal .modal-content {
+            background: transparent;
+            border: none;
+        }
+        
+        .zoom-modal .modal-body {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .zoom-image {
+            max-width: 100%;
+            max-height: 85vh;
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
+        }
+        
+        .zoom-image.zoomed {
+            cursor: zoom-out;
+            transform: scale(2);
+        }
+        
+        .carousel-item img {
+            cursor: zoom-in;
+        }
+        
+        .close-zoom {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 1060;
+        }
+        
+        .close-zoom:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -147,10 +201,11 @@
         </ul>
     </nav>
 
-    <main class="container mt-5">
-        <div class="row">
-            <!-- Left Column: Carousel and Thumbnails -->
-            <div class="col-lg-8">
+    <!-- Changed container-fluid and adjusted column sizes for larger layout -->
+    <main class="container-fluid mt-5">
+        <div class="row justify-content-center">
+            <!-- Left Column: Carousel and Thumbnails - Made larger -->
+            <div class="col-xl-7 col-lg-8">
                 <!-- Carousel for product images and video -->
                 <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -164,7 +219,7 @@
                             <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/3.jpg" class="d-block w-100" alt="Termék kép 3">
                         </div>
                         <div class="carousel-item d-flex align-items-center justify-content-center">
-                            <div style="width: 80%; max-width: 600px;">
+                            <div style="width: 95%; max-width: 800px;">
                                 <div class="ratio ratio-16x9">
                                     <iframe 
                                         src="https://www.youtube.com/embed/I_RE03Fzm0E" 
@@ -188,94 +243,94 @@
                     </button>
                 </div>
 
-                <!-- Thumbnails below the carousel -->
-                <div class="mt-3 d-flex justify-content-center">
-                    <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/1.jpg" class="img-thumbnail mx-1" style="width: 100px; cursor: pointer;" data-bs-target="#productCarousel" data-bs-slide-to="0" alt="Thumbnail 1">
-                    <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/2.jpg" class="img-thumbnail mx-1" style="width: 100px; cursor: pointer;" data-bs-target="#productCarousel" data-bs-slide-to="1" alt="Thumbnail 2">
-                    <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/3.jpg" class="img-thumbnail mx-1" style="width: 100px; cursor: pointer;" data-bs-target="#productCarousel" data-bs-slide-to="2" alt="Thumbnail 3">
-                    <div class="img-thumbnail mx-1 d-flex align-items-center justify-content-center" style="width: 100px; height: 100px; cursor: pointer; background-color: #f8f9fa;" data-bs-target="#productCarousel" data-bs-slide-to="3">
-                        <span style="font-size: 12px; text-align: center;">▶ Videó</span>
+                <!-- Thumbnails below the carousel - Made larger -->
+                <div class="mt-4 d-flex justify-content-center flex-wrap">
+                    <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/1.jpg" class="img-thumbnail mx-2 mb-2" style="width: 120px; cursor: pointer;" data-bs-target="#productCarousel" data-bs-slide-to="0" alt="Thumbnail 1">
+                    <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/2.jpg" class="img-thumbnail mx-2 mb-2" style="width: 120px; cursor: pointer;" data-bs-target="#productCarousel" data-bs-slide-to="1" alt="Thumbnail 2">
+                    <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/3.jpg" class="img-thumbnail mx-2 mb-2" style="width: 120px; cursor: pointer;" data-bs-target="#productCarousel" data-bs-slide-to="2" alt="Thumbnail 3">
+                    <div class="img-thumbnail mx-2 mb-2 d-flex align-items-center justify-content-center" style="width: 120px; height: 120px; cursor: pointer; background-color: #f8f9fa;" data-bs-target="#productCarousel" data-bs-slide-to="3">
+                        <span style="font-size: 14px; text-align: center;">▶ Videó</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Column: Product Details -->
-            <div class="col-lg-4">
-                <h1 class="product-name">Termék Név</h1>
-                <p class="product-price"><strong>Ár:</strong> 50 000 Ft</p>
-                <a href="#" class="btn btn-primary btn-lg w-100 mb-3">Behelyezés a kosárba</a>
+            <!-- Right Column: Product Details - Made larger -->
+            <div class="col-xl-4 col-lg-4">
+                <h1 class="product-name fs-2 mb-3">Termék Név</h1>
+                <p class="product-price fs-4 mb-4"><strong>Ár:</strong> 50 000 Ft</p>
+                <a href="#" id="addToCartBtn" class="btn btn-primary btn-lg w-100 mb-3">Belehelyezés kosárba</a>
 
                 <!-- Product Description -->
                 <div class="mt-4">
-                    <h3 class="mb-3">Termék leírás</h3>
-                    <div class="p-3 bg-light rounded">
-                        <p class="mb-2" id="shortDescription">
-                            A legendás A sorozatú cintányérok sokoldalúságukról ismertek, a szuper vékony és finom cintányéroktól az igazán nehéz cintányérokig, amelyek átvágják más hangszerek hangzását. A Zildjian Sound Lab nemrégiben kiegészítette őket...
-                        </p>
-                        <a href="#" class="text-muted" data-bs-toggle="modal" data-bs-target="#descriptionModal" style="text-decoration: none;">Részletek</a>
-                    </div>
-                </div>
-
-                <!-- Description Modal -->
-                <div class="modal fade" id="descriptionModal" tabindex="-1" aria-labelledby="descriptionModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="descriptionModalLabel">Termék részletes leírása</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezárás"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div id="fullDescription">
-                                    <p class="mb-3">
-                                        A legendás A sorozatú cintányérok sokoldalúságukról ismertek, a szuper vékony és finom cintányéroktól az igazán nehéz cintányérokig, amelyek átvágják más hangszerek hangzását. A Zildjian Sound Lab nemrégiben kiegészítette őket - a jelenlegi termékcsalád íveinek és súlyainak módosításával megtalálták azt, ami az A sorozat hangzását olyan klasszikussá teszi napjaink minden zenei stílusában.
-                                    </p>
-                                    <p class="mb-0">
-                                        Ez a csomag egy A Custom cintányérkészletet tartalmaz: 20" A Custom Ride, 14" A Custom HiHat, 16" A Custom Crash és 18" A Custom Crash.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezárás</button>
-                            </div>
+                    <h3 class="mb-3 fs-4">Termék leírás</h3>
+                    <div class="p-4 bg-light rounded">
+                        <div id="fullDescription">
+                            <p class="mb-3">
+                                A legendás A sorozatú cintányérok sokoldalúságukról ismertek, a szuper vékony és finom cintányéroktól az igazán nehéz cintányérokig, amelyek átvágják más hangszerek hangzását. A Zildjian Sound Lab nemrégiben kiegészítette őket - a jelenlegi termékcsalád íveinek és súlyainak módosításával megtalálták azt, ami az A sorozat hangzását olyan klasszikussá teszi napjaink minden zenei stílusában.
+                            </p>
+                            <p class="mb-0">
+                                Ez a csomag egy A Custom cintányérkészletet tartalmaz: 20" A Custom Ride, 14" A Custom HiHat, 16" A Custom Crash és 18" A Custom Crash.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- Image Zoom Modal -->
+    <div class="modal fade zoom-modal" id="imageZoomModal" tabindex="-1" aria-labelledby="imageZoomModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="close-zoom" data-bs-dismiss="modal" aria-label="Bezárás">×</button>
+                <div class="modal-body">
+                    <img id="zoomImage" src="" alt="Nagyított kép" class="zoom-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const osszes = JSON.parse(localStorage.getItem("osszesTermek") || "[]");
     const id = parseInt(localStorage.getItem("kivalasztottTermekID"), 10);
     const termek = osszes.find(t => t.id === id);
+     const params = new URLSearchParams(window.location.search);
 
     if (!termek) {
         alert("Termék nem található.");
         window.location.href = "main.html";
         return;
     }
+    document.getElementById("addToCartBtn").onclick = function(e) {
+        e.preventDefault();
+        if (!termek) return alert("Termék nem található!");
+        let kosar = JSON.parse(localStorage.getItem("kosar") || "[]");
+        const idx = kosar.findIndex(t => t.id === termek.id);
+        if (idx > -1) {
+            kosar[idx].mennyiseg += 1;
+        } else {
+            kosar.push({ ...termek, mennyiseg: 1 });
+        }
+        localStorage.setItem("kosar", JSON.stringify(kosar));
+        alert("A termék a kosárba került!");
+    };
 
     document.querySelector(".product-name").textContent = termek.nev;
     document.querySelector(".product-price").innerHTML = `<strong>Ár:</strong> ${termek.ar.toLocaleString()} Ft`;
 
-    const descContainer = document.querySelector(".product-name").closest(".col-lg-4").querySelector("#fullDescription p");
+    const descContainer = document.querySelector(".product-name").closest(".col-xl-4").querySelector("#fullDescription p");
     if (descContainer) {
-        const shortDescContainer = document.querySelector("#shortDescription");
-        if (shortDescContainer) {
-            // Create short version of description (first sentence + partial second)
-            const fullText = termek.leiras;
-            const shortText = fullText.length > 150 ? fullText.substring(0, 150) + "..." : fullText;
-            shortDescContainer.textContent = shortText;
-        }
-        
-        // Set full description in modal
+        // Set full description directly
         descContainer.textContent = termek.leiras;
     }
 
     const carouselInner = document.querySelector(".carousel-inner");
-    const thumbnails = document.querySelector(".mt-3.d-flex");
+    const thumbnails = document.querySelector(".mt-4.d-flex");
     carouselInner.innerHTML = "";
     thumbnails.innerHTML = "";
 
@@ -283,15 +338,16 @@ document.addEventListener("DOMContentLoaded", () => {
     termek.kepek.forEach((kep, index) => {
         const item = document.createElement("div");
         item.className = "carousel-item" + (index === 0 ? " active" : "");
-        item.innerHTML = `<img src="${kep}" class="d-block w-100" alt="Termék kép ${index + 1}">`;
+        item.innerHTML = `<img src="${kep}" class="d-block w-100" alt="Termék kép ${index + 1}" data-image-src="${kep}">`;
         carouselInner.appendChild(item);
 
         const thumb = document.createElement("img");
         thumb.src = kep;
-        thumb.className = "img-thumbnail mx-1";
-        thumb.style = "width: 100px; cursor: pointer;";
+        thumb.className = "img-thumbnail mx-2 mb-2";
+        thumb.style = "width: 120px; cursor: pointer;";
         thumb.setAttribute("data-bs-target", "#productCarousel");
         thumb.setAttribute("data-bs-slide-to", index);
+        thumb.setAttribute("data-image-src", kep);
         thumbnails.appendChild(thumb);
     });
 
@@ -308,7 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         videoItem.innerHTML = `
             <div class="d-flex align-items-center justify-content-center h-100">
-                <div style="width: 80%; max-width: 600px;">
+                <div style="width: 95%; max-width: 800px;">
                     <div class="ratio ratio-16x9">
                         <iframe 
                             src="${videoSrc}" 
@@ -326,13 +382,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Add video thumbnail
         const videoThumb = document.createElement("div");
-        videoThumb.className = "img-thumbnail mx-1 d-flex align-items-center justify-content-center";
-        videoThumb.style = "width: 100px; height: 100px; cursor: pointer; background-color: #f8f9fa;";
+        videoThumb.className = "img-thumbnail mx-2 mb-2 d-flex align-items-center justify-content-center";
+        videoThumb.style = "width: 120px; height: 120px; cursor: pointer; background-color: #f8f9fa;";
         videoThumb.setAttribute("data-bs-target", "#productCarousel");
         videoThumb.setAttribute("data-bs-slide-to", termek.kepek.length);
-        videoThumb.innerHTML = '<span style="font-size: 12px; text-align: center;">▶ Videó</span>';
+        videoThumb.innerHTML = '<span style="font-size: 14px; text-align: center;">▶ Videó</span>';
         thumbnails.appendChild(videoThumb);
     }
+
+    // Add click event listeners for image zoom
+    setTimeout(() => {
+        // Add event listeners to carousel images
+        document.querySelectorAll('.carousel-item img[data-image-src]').forEach(img => {
+            img.addEventListener('click', function() {
+                const imageSrc = this.getAttribute('data-image-src');
+                openImageZoom(imageSrc);
+            });
+        });
+
+        // Add event listeners to thumbnail images
+        document.querySelectorAll('.img-thumbnail[data-image-src]').forEach(thumb => {
+            thumb.addEventListener('click', function(e) {
+                // Prevent carousel slide if clicking for zoom
+                if (e.ctrlKey || e.metaKey) {
+                    e.preventDefault();
+                    const imageSrc = this.getAttribute('data-image-src');
+                    openImageZoom(imageSrc);
+                }
+            });
+        });
+    }, 100);
+});
+
+// Function to open image zoom modal
+function openImageZoom(imageSrc) {
+    const zoomImage = document.getElementById('zoomImage');
+    const zoomModal = new bootstrap.Modal(document.getElementById('imageZoomModal'));
+    
+    zoomImage.src = imageSrc;
+    zoomImage.classList.remove('zoomed');
+    zoomModal.show();
+}
+
+// Add zoom functionality to the image in modal
+document.addEventListener('DOMContentLoaded', function() {
+    const zoomImage = document.getElementById('zoomImage');
+    
+    zoomImage.addEventListener('click', function() {
+        this.classList.toggle('zoomed');
+    });
+
+    // Reset zoom when modal is closed
+    document.getElementById('imageZoomModal').addEventListener('hidden.bs.modal', function() {
+        zoomImage.classList.remove('zoomed');
+    });
 });
 </script>
 

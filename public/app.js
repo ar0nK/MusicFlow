@@ -83,3 +83,33 @@ function filterByKeys(keysString) {
   const filtered = allProducts.filter(p => keys.includes(p.categoryKey));
   renderProducts(filtered);
 }
+
+
+// Valós idejű keresés
+document.getElementById("searchBar").addEventListener("input", e => {
+  const query = e.target.value.toLowerCase();
+  const allProducts = JSON.parse(localStorage.getItem("osszesTermek") || "[]");
+
+  const filtered = allProducts.filter(p =>
+    p.nev.toLowerCase().includes(query) ||
+    p.leiras?.toLowerCase().includes(query)
+  );
+
+  renderProducts(filtered);
+});
+
+function addToCart(termek) {
+    
+
+    let kosar = JSON.parse(localStorage.getItem("kosar") || "[]");
+
+    // Ha már van ilyen termék, csak a mennyiséget növeljük
+    const idx = kosar.findIndex(t => t.id === termek.id);
+    if (idx > -1) {
+        kosar[idx].mennyiseg += 1;
+    } else {
+        kosar.push({ ...termek, mennyiseg: 1 });
+    }
+    localStorage.setItem("kosar", JSON.stringify(kosar));
+    alert("A termék a kosárba került!");
+}
