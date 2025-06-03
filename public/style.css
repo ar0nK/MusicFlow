@@ -366,21 +366,11 @@ nav ul li:hover ~ main::before {
 .carousel-control-next {
     width: 5%;
     opacity: 0.8;
-    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
     opacity: 1;
-    background-color: rgba(0, 0, 0, 0.5); /* Darker on hover */
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 50%;
-    padding: 20px;
-    background-size: 20px;
 }
 
 /* Optional: Adjust the position of the arrows */
@@ -468,7 +458,7 @@ nav ul li:hover ~ main::before {
 }
 /* Main carousel container */
 #mainCarousel {
-    width: 80%; /* Take up 80% of the container width */
+    width: 100%; /* Take up 80% of the container width */
     margin: 0 auto; /* Center the carousel */
     margin-bottom: 3%; /* Space below the carousel */
 }

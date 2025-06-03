@@ -71,46 +71,39 @@
                     </div>
                 </div>
             </div>
-            <a href="javascript:void(0)">Kosár</a> |
+            <a href="kosar.html">Kosár</a> |
             <a href="#">Elérhetőség</a>
         </div>
     </header>
     <nav>
         <ul>
             <li><a href="#">Akciók</a></li>
-            <li><a href="#">Gitár</a>
+            <li><a href="#" data-filter="klasszikusGitarok,akusztikusGitarok,elektromosGitarok,hurok">Gitár</a>
                 <ul>
-                    <li><a href="#">Klasszikus Gitárok</a></li>
-                    <li><a href="#">Akusztikus Gitárok</a></li>
-                    <li><a href="#">Elektromos Gitárok</a></li>
-                    <li><a href="#">Húrok</a></li>
-                    <li><a href="#">Pengetők</a></li>
-                    <li><a href="#">Gitárkombók</a></li>
+                    <li><a href="#" data-filter="klasszikusGitarok">Klasszikus Gitárok</a></li>
+                    <li><a href="#" data-filter="akusztikusGitarok">Akusztikus Gitárok</a></li>
+                    <li><a href="#" data-filter="elektromosGitarok">Elektromos Gitárok</a></li>
+                    <li><a href="#" data-filter="hurok">Húrok</a></li>
                 </ul>
             </li>
-            <li><a href="#">Basszusgitár</a>
+            <li><a href="#" data-filter="negyhurosBasszusGitarok,othurosBasszusGitarok">Basszusgitár</a>
                 <ul>
-                    <li><a href="#">4-húros Basszusgitárok</a></li>
-                    <li><a href="#">5-húrosok Basszusgitárok</a></li>
-                    <li><a href="#">Húrok</a></li>
-                    <li><a href="#">Basszusgitár kombók</a></li>
+                    <li><a href="#" data-filter="negyhurosBasszusGitarok">4-húros Basszusgitárok</a></li>
+                    <li><a href="#" data-filter="othurosBasszusGitarok">5-húrosok Basszusgitárok</a></li>
                 </ul>
             </li>
-            <li><a href="#">Dob</a>
+            <li><a href="#" data-filter="akdobok,pergodob,cintanyer,elektromosDobok">Dob</a>
                 <ul>
                     <li class="has-submenu">
-                        <a href="#">Akusztikus Dobok</a>
+                        <a href="#" data-filter="akdobok,pergodob,cintanyer">Akusztikus Dobok</a>
                         <ul class="submenu">
-                            <li><a href="#">Akusztikus Dobszerelések</a></li>
-                            <li><a href="#">Pergődobok</a></li>
-                            <li><a href="#">Cintányér szettek</a></li>
+                            <li><a href="#" data-filter="akdobok">Akusztikus Dobszerelések</a></li>
+                            <li><a href="#" data-filter="pergodob">Pergődobok</a></li>
+                            <li><a href="#" data-filter="cintanyer">Cintányér szettek</a></li>
                         </ul>
                     </li>
-                    <li class="has-submenu">
-                        <a href="#">Elektromos Dobok</a>
-                        <ul class="submenu">
-                            <li><a href="#">Elektromos Dobszerelések</a></li>
-                        </ul>
+                    <li>
+                        <a href="#" data-filter="elektromosDobok">Elektromos Dobok</a>
                     </li>
                 </ul>
             </li>
@@ -147,70 +140,6 @@
     </nav>
 
     <main>
-        <div class="container py-5">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4">
-            <!-- Guitar Category -->
-            <div class="col">
-            <div class="card h-100 shadow-sm hover-card" style="max-width: 8rem; cursor: pointer;" onclick="location.href='#';">
-                <img src="IMG/gitar.jpg" class="card-img-top" alt="Gitárok">
-                <div class="card-body p-2 text-center">
-                <h5 class="card-title">Gitárok</h5>
-                </div>
-            </div>
-            </div>
-            
-            <!-- Bass Category -->
-            <div class="col">
-            <div class="card h-100 shadow-sm hover-card" style="max-width: 8rem; cursor: pointer;" onclick="location.href='#';">
-                <img src="IMG/bass.jpg" class="card-img-top" alt="Basszusgitárok">
-                <div class="card-body p-2 text-center">
-                <h5 class="card-title">Basszusgitárok</h5>
-                </div>
-            </div>
-            </div>
-            
-            <!-- Drums Category -->
-            <div class="col">
-            <div class="card h-100 shadow-sm hover-card" style="max-width: 8rem; cursor: pointer;" onclick="location.href='#';">
-                <img src="IMG/dob.jpg" class="card-img-top" alt="Dobok">
-                <div class="card-body p-2 text-center">
-                <h5 class="card-title">Dobok</h5>
-                </div>
-            </div>
-            </div>
-        
-            <!-- Piano Category -->
-            <div class="col">
-            <div class="card h-100 shadow-sm hover-card" style="max-width: 8rem; cursor: pointer;" onclick="location.href='#';">
-                <img src="IMG/zongora.jpg" class="card-img-top" alt="Billentyűs hangszerek">
-                <div class="card-body p-2 text-center">
-                <h5 class="card-title">Billentyűs hangszerek</h5>
-                </div>
-            </div>
-            </div>
-        
-            <!-- Winds Category -->
-            <div class="col">
-            <div class="card h-100 shadow-sm hover-card" style="max-width: 8rem; cursor: pointer;" onclick="location.href='#';">
-                <img src="IMG/fuvos.jpg" class="card-img-top" alt="Fúvós hangszerek">
-                <div class="card-body p-2 text-center">
-                <h5 class="card-title">Fúvós hangszerek</h5>
-                </div>
-            </div>
-            </div>
-        
-            <!-- Strings Category -->
-            <div class="col">
-            <div class="card h-100 shadow-sm hover-card" style="max-width: 8rem; cursor: pointer;" onclick="location.href='#';">
-                <img src="IMG/vonos.jpg" class="card-img-top" alt="Vonós hangszerek">
-                <div class="card-body p-2 text-center">
-                <h5 class="card-title">Vonós hangszerek</h5>
-                </div>
-            </div>
-            </div>
-        </div>
-        </div>
-
         <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
             <!-- Carousel Indicators -->
             <div class="carousel-indicators">
@@ -251,13 +180,80 @@
             <!-- Carousel Controls -->
         <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Előző</span>
+            
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Következő</span>
+            
         </button>
     </div>
+
+     <div class="container py-5">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4">
+            <!-- Guitar Category -->
+            <div class="col">
+            <div class="card h-100 shadow-sm hover-card" style="max-width: 8rem; cursor: pointer;"
+                onclick="filterByKeys('elektromosGitarok,akusztikusGitarok,klasszikusGitarok,hurok')">
+                <img src="IMG/gitar.jpg" class="card-img-top" alt="Gitárok">
+                <div class="card-body p-2 text-center">
+                <h5 class="card-title">Gitárok</h5>
+                </div>
+            </div>
+            </div>
+
+            <!-- Bass Category -->
+            <div class="col">
+            <div class="card h-100 shadow-sm hover-card" style="max-width: 8rem; cursor: pointer;"
+                onclick="filterByKeys('negyhurosBasszusGitarok,othurosBasszusGitarok')">
+                <img src="IMG/bass.jpg" class="card-img-top" alt="Basszusgitárok">
+                <div class="card-body p-2 text-center">
+                <h5 class="card-title">Basszusgitárok</h5>
+                </div>
+            </div>
+            </div>
+
+            <!-- Drums Category -->
+            <div class="col">
+            <div class="card h-100 shadow-sm hover-card" style="max-width: 8rem; cursor: pointer;"
+                onclick="filterByKeys('akdobok,pergodob,cintanyer,elektromosDobok')">
+                <img src="IMG/dob.jpg" class="card-img-top" alt="Dobok">
+                <div class="card-body p-2 text-center">
+                <h5 class="card-title">Dobok</h5>
+                </div>
+            </div>
+            </div>
+        
+            <!-- Piano Category -->
+            <div class="col">
+            <div class="card h-100 shadow-sm hover-card" style="max-width: 8rem; cursor: pointer;" onclick="location.href='#';">
+                <img src="IMG/zongora.jpg" class="card-img-top" alt="Billentyűs hangszerek">
+                <div class="card-body p-2 text-center">
+                <h5 class="card-title">Billentyűs hangszerek</h5>
+                </div>
+            </div>
+            </div>
+        
+            <!-- Winds Category -->
+            <div class="col">
+            <div class="card h-100 shadow-sm hover-card" style="max-width: 8rem; cursor: pointer;" onclick="location.href='#';">
+                <img src="IMG/fuvos.jpg" class="card-img-top" alt="Fúvós hangszerek">
+                <div class="card-body p-2 text-center">
+                <h5 class="card-title">Fúvós hangszerek</h5>
+                </div>
+            </div>
+            </div>
+        
+            <!-- Strings Category -->
+            <div class="col">
+            <div class="card h-100 shadow-sm hover-card" style="max-width: 8rem; cursor: pointer;" onclick="location.href='#';">
+                <img src="IMG/vonos.jpg" class="card-img-top" alt="Vonós hangszerek">
+                <div class="card-body p-2 text-center">
+                <h5 class="card-title">Vonós hangszerek</h5>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
         
     <!--Termékek-->
     <div class="container">
@@ -269,49 +265,104 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-fetch("termekek.json")
-    .then(response => response.json())
-    .then(data => {
-        const productList = document.querySelector(".product-list");
-        //productList.innerHTML = ""; // Töröljük a placeholder-eket
-
-        const allProducts = Object.values(data).flat();
-
-        allProducts.forEach(product => {
-            const shortDesc = product.leiras?.slice(0, 120) + "..." || "";
-            const image = product.kepek?.[0] || "https://via.placeholder.com/200";
-
-            const card = document.createElement("div");
-            card.className = "product hover-product col-mb-4";
-            card.innerHTML = `
-                <img src="${image}" alt="${product.nev}" class="product-image">
-                <div class="product-info">
-                    <div class="product-details">
-                        <div>
-                            <strong class="product-category">${product.nev}</strong><br>
-                            
-                        </div>
-                    </div>
-                    <p>${shortDesc}</p>
-                    <div class="product-purchase">
-                        <strong>${product.ar.toLocaleString()} Ft</strong>
-                        <a href="#" class="btn btn-primary" onclick="viewProduct(${product.id})">Részletek</a>
-                    </div>
-                </div>
-            `;
-            productList.appendChild(card);
-        });
-
-        localStorage.setItem("osszesTermek", JSON.stringify(allProducts));
-    })
-    .catch(error => console.error("Hiba a JSON betöltésekor:", error));
-});
 
 function viewProduct(id) {
-localStorage.setItem("kivalasztottTermekID", id);
-window.location.href = "termek_sablon.html";
+  localStorage.setItem("kivalasztottTermekID", id);
+  window.location.href = "termek_sablon.html";
 }
+
+function renderProducts(products) {
+  const productList = document.querySelector(".product-list");
+  productList.innerHTML = "";
+  products.forEach(prod => {
+    const img = prod.kepek?.[0] || "https://via.placeholder.com/200";
+    const short = prod.leiras?.slice(0, 120) + "…" || "";
+    productList.insertAdjacentHTML("beforeend", `
+      <div class="product hover-product" onclick="viewProduct(${prod.id})">
+        <img src="${img}" class="product-image" alt="${prod.nev}">
+        <div class="product-info">
+          <div class="product-details">
+            <strong class="product-category">${prod.nev}</strong>
+          </div>
+          <p>${short}</p>
+          <div class="product-purchase">
+            <strong>${prod.ar.toLocaleString()} Ft</strong>
+            <a href="#" class="btn btn-primary" >Kosárba</a>
+          </div>
+        </div>
+      </div>
+    `);
+  });
+}
+
+function setupFilters(products) {
+  document.querySelectorAll("a[data-filter]").forEach(a => {
+    a.addEventListener("click", e => {
+      e.preventDefault();
+      const keys = a.dataset.filter.split(",").map(k => k.trim());
+      const filtered = products.filter(p => keys.includes(p.categoryKey));
+      renderProducts(filtered);
+    });
+  });
+
+  document.querySelectorAll("a[data-filter-all]").forEach(a => {
+    a.addEventListener("click", e => {
+      e.preventDefault();
+      renderProducts(products);
+    });
+  });
+}
+
+function getRandomItems(arr, count) {
+  const shuffled = arr.slice().sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("termekek.json")
+    .then(r => r.json())
+    .then(data => {
+      const allProducts = Object.entries(data).flatMap(([key, arr]) =>
+        arr.map(p => ({ ...p, categoryKey: key }))
+      );
+
+      localStorage.setItem("osszesTermek", JSON.stringify(allProducts));
+
+      renderProducts(allProducts);
+      setupFilters(allProducts);
+
+      // 🎯 3 random termék a carouselbe
+      const featured = getRandomItems(allProducts, 3);
+      const inner = document.querySelector("#mainCarousel .carousel-inner");
+      const indicators = document.querySelector(".carousel-indicators");
+      inner.innerHTML = "";
+      indicators.innerHTML = "";
+
+      featured.forEach((product, i) => {
+        const img = product.kepek?.[0] || "https://via.placeholder.com/800x300";
+        const short = product.leiras?.slice(0, 100) + "…" || "";
+
+        const item = document.createElement("div");
+        item.className = "carousel-item" + (i === 0 ? " active" : "");
+        item.innerHTML = `
+          <img src="${img}" class="d-block w-100" alt="${product.nev}">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
+            <h5>${product.nev}</h5>
+            <p>${short}</p>
+            <button class="btn btn-primary" onclick="viewProduct(${product.id})">Részletek</button>
+          </div>
+        `;
+        inner.appendChild(item);
+
+        const indicator = document.createElement("button");
+        indicator.type = "button";
+        indicator.setAttribute("data-bs-target", "#mainCarousel");
+        indicator.setAttribute("data-bs-slide-to", i.toString());
+        if (i === 0) indicator.className = "active";
+        indicators.appendChild(indicator);
+      });
+    });
+});
 </script>
 <script src="app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

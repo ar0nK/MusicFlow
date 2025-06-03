@@ -50,41 +50,16 @@ function renderAllProducts() {
     });
 }
 
-// Termék kártya HTML generálása
-function createProductCard(termek, kategoria) {
-    const kepUrl = termek.kepek && termek.kepek.length > 0 
-        ? `${termek.kepek[0]}`
-        : 'https://via.placeholder.com/200';
-    return `
-        <div class="product hover-product">
-            <img src="${kepUrl}" alt="${termek.nev}" class="product-image">
-            <div class="product-info">
-                <div class="product-details">
-                    <div>
-                        <strong class="product-category">${termek.nev}</strong><br>
-                        ${kategoria.replace(/([A-Z])/g, ' $1')}
-                    </div>
-                </div>
-                <p>${termek.leiras ? termek.leiras.substring(0, 100) + '...' : ''}</p>
-                <div class="product-purchase">
-                    <strong>${termek.ar} Ft</strong>
-                    <a href="#" class="btn btn-primary">Kosárba</a>
-                </div>
-            </div>
-        </div>`;
-}
-
 // Kategória nevek térképezése a JSON megfelelő kulcsaira
 const kategoriaMap = {
     "Elektromos Gitárok": "elektromosGitarok",
     "Akusztikus Gitárok": "akusztikusGitarok",
     "Klasszikus Gitárok": "klasszikusGitarok",
     "Húrok": "hurok",
-    "Akusztikus Dobszerelések":"akdobok",
-    "Pergődobok":"pergodobok",
-    "Cintányér szettek":"cintanyer",
-    "Elektromos Dobszerelések":"elektromosDobsz",
-    
+    "Akusztikus Dobszerelések": "akdobok",
+    "Pergődobok": "pergodobok",
+    "Cintányér szettek": "cintanyer",
+    "Elektromos Dobszerelések": "elektromosDobok", // <-- javítva!
 };
 
 // Navigációs menü eseményfigyelő
@@ -102,3 +77,9 @@ if (document.querySelectorAll('nav ul li ul li a').length) {
     });
 }
 
+function filterByKeys(keysString) {
+  const keys = keysString.split(",").map(k => k.trim());
+  const allProducts = JSON.parse(localStorage.getItem("osszesTermek") || "[]");
+  const filtered = allProducts.filter(p => keys.includes(p.categoryKey));
+  renderProducts(filtered);
+}
