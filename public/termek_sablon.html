@@ -13,35 +13,29 @@
             max-width: 90vw;
             max-height: 90vh;
         }
-        
         .zoom-modal .modal-content {
             background: transparent;
             border: none;
         }
-        
         .zoom-modal .modal-body {
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        
         .zoom-image {
             max-width: 100%;
             max-height: 85vh;
             cursor: zoom-in;
             transition: transform 0.3s ease;
         }
-        
         .zoom-image.zoomed {
             cursor: zoom-out;
             transform: scale(2);
         }
-        
         .carousel-item img {
             cursor: zoom-in;
         }
-        
         .close-zoom {
             position: absolute;
             top: 15px;
@@ -56,21 +50,31 @@
             cursor: pointer;
             z-index: 1060;
         }
-        
         .close-zoom:hover {
             background: rgba(0, 0, 0, 0.9);
+        }
+        /* Rating (értékelés) csillagok stílusok */
+        .rating-star {
+            color: #ddd;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .rating-star.filled {
+            color: #ffc107;
+        }
+        .rating-star:hover,
+        .rating-star.hovered {
+            color: #ff9800;
         }
     </style>
 </head>
 <body>
     <header>
         <a href="main.html" class="logo"><img src="IMG/logo.png" alt="logo" title="logo" style="width: auto; height: 120px;"></a>
-        
         <input type="text" id="searchBar" class="search-bar form-control" placeholder="Keresés...">
-        
         <div class="account-info">
             <a href="#" data-bs-toggle="modal" data-bs-target="#authModal">Fiók</a> |
-
                 <!-- Authentication Modal -->
                 <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
@@ -196,38 +200,13 @@
         </ul>
     </nav>
 
-    <!-- Changed container-fluid and adjusted column sizes for larger layout -->
     <main class="container-fluid mt-5">
         <div class="row justify-content-center">
             <!-- Left Column: Carousel and Thumbnails - Made larger -->
             <div class="col-xl-5 col-lg-6">
                 <!-- Carousel for product images and video -->
                 <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="" class="d-block w-90" alt="Termék kép 1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/2.jpg" class="d-block w-90" alt="Termék kép 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/3.jpg" class="d-block w-90" alt="Termék kép 3">
-                        </div>
-                        <div class="carousel-item d-flex align-items-center justify-content-center">
-                            <div style="width: 95%; max-width: 800px;">
-                                <div class="ratio ratio-16x9">
-                                    <iframe 
-                                        src="https://www.youtube.com/embed/I_RE03Fzm0E" 
-                                        title="Zildjian A Custom Cymbal Box Set Pack + FREE 18&quot; Crash Set (A20579-11-1010824P)" 
-                                        frameborder="0" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                        referrerpolicy="strict-origin-when-cross-origin" 
-                                        allowfullscreen>
-                                    </iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="carousel-inner"></div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Előző</span>
@@ -237,16 +216,8 @@
                         <span class="visually-hidden">Következő</span>
                     </button>
                 </div>
-
                 <!-- Thumbnails below the carousel - Made larger -->
-                <div class="mt-4 d-flex justify-content-center flex-wrap">
-                    <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/1.jpg" class="img-thumbnail mx-2 mb-2" style="width: 120px; cursor: pointer;" data-bs-target="#productCarousel" data-bs-slide-to="0" alt="Thumbnail 1">
-                    <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/2.jpg" class="img-thumbnail mx-2 mb-2" style="width: 120px; cursor: pointer;" data-bs-target="#productCarousel" data-bs-slide-to="1" alt="Thumbnail 2">
-                    <img src="./Hangszerek/Dobok/Akusztikus/Cintányér szettek/Zildjian A Custom box set + 18 A custom crash/3.jpg" class="img-thumbnail mx-2 mb-2" style="width: 120px; cursor: pointer;" data-bs-target="#productCarousel" data-bs-slide-to="2" alt="Thumbnail 3">
-                    <div class="img-thumbnail mx-2 mb-2 d-flex align-items-center justify-content-center" style="width: 120px; height: 120px; cursor: pointer; background-color: #f8f9fa;" data-bs-target="#productCarousel" data-bs-slide-to="3">
-                        <span style="font-size: 14px; text-align: center;">▶ Videó</span>
-                    </div>
-                </div>
+                <div class="mt-4 d-flex justify-content-center flex-wrap"></div>
             </div>
 
             <!-- Right Column: Product Details - Made larger -->
@@ -260,13 +231,32 @@
                     <h3 class="mb-3 fs-4">Termék leírás</h3>
                     <div class="p-4 bg-light rounded">
                         <div id="fullDescription">
-                            <p class="mb-3">
-                               
-                            <p class="mb-0">
-                                
-                            </p>
+                            <p class="mb-3"></p>
+                            <p class="mb-0"></p>
                         </div>
                     </div>
+                </div>
+
+                <!-- Értékelések -->
+                <div class="mt-5" id="ratingsSection">
+                    <h3 class="fs-4 mb-3">Értékelések</h3>
+                    <div id="ratingsList"></div>
+                    <hr>
+                    <h4 class="fs-5 mb-2">Új értékelés beküldése</h4>
+                    <form id="ratingForm" autocomplete="off">
+                        <div class="mb-2">
+                            <span id="starRating">
+                                <!-- Csillagok ide generálódnak -->
+                            </span>
+                        </div>
+                        <div class="mb-2">
+                            <input type="text" id="ratingName" class="form-control" placeholder="Név (opcionális)">
+                        </div>
+                        <div class="mb-2">
+                            <textarea id="ratingComment" class="form-control" rows="2" placeholder="Írd meg a véleményed..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Értékelés beküldése</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -287,13 +277,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-
-
 document.addEventListener("DOMContentLoaded", () => {
+    // --- Termék adat betöltés ---
     const osszes = JSON.parse(localStorage.getItem("osszesTermek") || "[]");
     const id = parseInt(localStorage.getItem("kivalasztottTermekID"), 10);
     const termek = osszes.find(t => t.id === id);
-     const params = new URLSearchParams(window.location.search);
+    const params = new URLSearchParams(window.location.search);
 
     if (!termek) {
         alert("Termék nem található.");
@@ -319,7 +308,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const descContainer = document.querySelector(".product-name").closest(".col-xl-4").querySelector("#fullDescription p");
     if (descContainer) {
-        // Set full description directly
         descContainer.textContent = termek.leiras;
     }
 
@@ -349,13 +337,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (termek.video && termek.video.includes("youtube.com")) {
         const videoItem = document.createElement("div");
         videoItem.className = "carousel-item";
-        
         let videoSrc = termek.video;
         const urlMatch = termek.video.match(/src=['"]([^'"]+)['"]/);
         if (urlMatch && urlMatch[1]) {
             videoSrc = urlMatch[1];
         }
-        
         videoItem.innerHTML = `
             <div class="d-flex align-items-center justify-content-center h-100">
                 <div style="width: 95%; max-width: 800px;">
@@ -406,32 +392,95 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }, 100);
+
+    // --- Értékelés funkció inicializálás ---
+    initRatings(id);
 });
 
-// Function to open image zoom modal
+// Image Zoom Modal
 function openImageZoom(imageSrc) {
     const zoomImage = document.getElementById('zoomImage');
     const zoomModal = new bootstrap.Modal(document.getElementById('imageZoomModal'));
-    
     zoomImage.src = imageSrc;
     zoomImage.classList.remove('zoomed');
     zoomModal.show();
 }
-
-// Add zoom functionality to the image in modal
 document.addEventListener('DOMContentLoaded', function() {
     const zoomImage = document.getElementById('zoomImage');
-    
     zoomImage.addEventListener('click', function() {
         this.classList.toggle('zoomed');
     });
-
-    // Reset zoom when modal is closed
     document.getElementById('imageZoomModal').addEventListener('hidden.bs.modal', function() {
         zoomImage.classList.remove('zoomed');
     });
 });
-</script>
 
+let selectedStars = 0;
+
+    function ratingsKey() {
+        return "ratings";
+    }
+
+    function renderStars() {
+        const starRating = document.getElementById("starRating");
+        starRating.innerHTML = "";
+        for (let i = 1; i <= 5; i++) {
+            const star = document.createElement("span");
+            star.textContent = i <= selectedStars ? "★" : "☆";
+            star.style.cursor = "pointer";
+            star.style.color = "#ffc107";
+            star.style.fontSize = "24px";
+            star.addEventListener("click", function () {
+                selectedStars = i;
+                renderStars();
+            });
+            starRating.appendChild(star);
+        }
+    }
+    renderStars();
+
+    function loadRatings() {
+        const ratings = JSON.parse(localStorage.getItem(ratingsKey()) || "[]");
+        const ratingsList = document.getElementById("ratingsList");
+        ratingsList.innerHTML = ratings.length === 0
+            ? "<p>Még nincsenek értékelések.</p>"
+            : ratings.map(r =>
+                `<div class="mb-3 p-2 border rounded bg-light">
+                    <strong style="color:#ffc107;">${"★".repeat(r.stars)}${"☆".repeat(5 - r.stars)}</strong>
+                    <span class="ms-2">${r.name ? r.name : "Vendég"}</span>
+                    <p class="mb-0 mt-1">${r.comment.replace(/</g, "&lt;")}</p>
+                    <small class="text-muted">${new Date(r.timestamp).toLocaleString("hu-HU")}</small>
+                </div>`
+            ).join("");
+    }
+    loadRatings();
+
+    const ratingForm = document.getElementById("ratingForm");
+    const ratingName = document.getElementById("ratingName");
+    const ratingComment = document.getElementById("ratingComment");
+
+    ratingForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (selectedStars === 0) {
+            alert("Kérlek adj meg csillagos értékelést!");
+            return;
+        }
+        const rating = {
+            stars: selectedStars,
+            name: ratingName.value.trim(),
+            comment: ratingComment.value.trim(),
+            timestamp: Date.now()
+        };
+        const ratings = JSON.parse(localStorage.getItem(ratingsKey()) || "[]");
+        ratings.unshift(rating);
+        localStorage.setItem(ratingsKey(), JSON.stringify(ratings));
+        loadRatings();
+        selectedStars = 0;
+        ratingName.value = "";
+        ratingComment.value = "";
+        renderStars();
+        alert("Köszönjük az értékelést!");
+    });
+</script>
 </body>
 </html>
