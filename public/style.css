@@ -272,6 +272,7 @@ nav ul li:hover ~ main::before {
     .product-list {
         grid-template-columns: repeat(3, 1fr);
     }
+
 }
 
 @media (max-width: 768px) {

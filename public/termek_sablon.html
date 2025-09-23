@@ -8,7 +8,7 @@
     <script src="main.js"></script>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Custom styles for zoom modal */
+        /* Zoom modal */
         .zoom-modal .modal-dialog {
             max-width: 90vw;
             max-height: 90vh;
@@ -53,7 +53,31 @@
         .close-zoom:hover {
             background: rgba(0, 0, 0, 0.9);
         }
-        /* Rating (értékelés) csillagok stílusok */
+
+        /* Leírás clamp + fade */
+        #descriptionWrapper {
+            position: relative;
+        }
+        #descriptionContent {
+            overflow: hidden;
+        }
+        .desc-fade {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 3rem;
+            /* .bg-light (#f8f9fa) átmenethez illesztve */
+            background: linear-gradient(to bottom, rgba(248,249,250,0), rgba(248,249,250,1));
+            border-bottom-left-radius: 0.375rem;
+            border-bottom-right-radius: 0.375rem;
+            pointer-events: none;
+        }
+        .desc-fade.d-none {
+            display: none !important;
+        }
+
+        /* Értékelés csillagok */
         .rating-star {
             color: #ddd;
             font-size: 2rem;
@@ -70,211 +94,216 @@
     </style>
 </head>
 <body>
-    <header>
-        <a href="main.html" class="logo"><img src="IMG/logo.png" alt="logo" title="logo" style="width: auto; height: 120px;"></a>
-        <input type="text" id="searchBar" class="search-bar form-control" placeholder="Keresés...">
-        <div class="account-info">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#authModal">Fiók</a> |
-                <!-- Authentication Modal -->
-                <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="authModalLabel">Bejelentkezés / Regisztráció</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezárás"></button>
+<header>
+    <a href="main.html" class="logo"><img src="IMG/logo.png" alt="logo" title="logo" style="width: auto; height: 120px;"></a>
+    <input type="text" id="searchBar" class="search-bar form-control" placeholder="Keresés...">
+    <div class="account-info">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#authModal">Fiók</a> |
+        <!-- Authentication Modal -->
+        <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="authModalLabel">Bejelentkezés / Regisztráció</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezárás"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Tabs for Login and Register -->
+                        <ul class="nav nav-tabs" id="authTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Bejelentkezés</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false">Regisztráció</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content mt-3" id="authTabsContent">
+                            <!-- Login Form -->
+                            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="loginEmail" class="form-label">Email cím</label>
+                                        <input type="email" class="form-control" id="loginEmail" placeholder="Email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="loginPassword" class="form-label">Jelszó</label>
+                                        <input type="password" class="form-control" id="loginPassword" placeholder="Jelszó">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">Bejelentkezés</button>
+                                </form>
                             </div>
-                            <div class="modal-body">
-                                <!-- Tabs for Login and Register -->
-                                <ul class="nav nav-tabs" id="authTabs" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Bejelentkezés</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false">Regisztráció</button>
-                                    </li>
-                                </ul>
-                                <div class="tab-content mt-3" id="authTabsContent">
-                                    <!-- Login Form -->
-                                    <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                                        <form>
-                                            <div class="mb-3">
-                                                <label for="loginEmail" class="form-label">Email cím</label>
-                                                <input type="email" class="form-control" id="loginEmail" placeholder="Email">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="loginPassword" class="form-label">Jelszó</label>
-                                                <input type="password" class="form-control" id="loginPassword" placeholder="Jelszó">
-                                            </div>
-                                            <button type="submit" class="btn btn-primary w-100">Bejelentkezés</button>
-                                        </form>
+                            <!-- Register Form -->
+                            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="registerEmail" class="form-label">Email cím</label>
+                                        <input type="email" class="form-control" id="registerEmail" placeholder="Email">
                                     </div>
-                                    <!-- Register Form -->
-                                    <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                                        <form>
-                                            <div class="mb-3">
-                                                <label for="registerEmail" class="form-label">Email cím</label>
-                                                <input type="email" class="form-control" id="registerEmail" placeholder="Email">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="registerPassword" class="form-label">Jelszó</label>
-                                                <input type="password" class="form-control" id="registerPassword" placeholder="Jelszó">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="registerConfirmPassword" class="form-label">Jelszó megerősítése</label>
-                                                <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Jelszó megerősítése">
-                                            </div>
-                                            <button type="submit" class="btn btn-primary w-100">Regisztráció</button>
-                                        </form>
+                                    <div class="mb-3">
+                                        <label for="registerPassword" class="form-label">Jelszó</label>
+                                        <input type="password" class="form-control" id="registerPassword" placeholder="Jelszó">
                                     </div>
-                                </div>
+                                    <div class="mb-3">
+                                        <label for="registerConfirmPassword" class="form-label">Jelszó megerősítése</label>
+                                        <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Jelszó megerősítése">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">Regisztráció</button>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
-            <a href="kosar.html">Kosár</a> |
-            <a href="#">Elérhetőség</a>
-        </div>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="main.html">Akciók</a></li>
-            <li><a href="main.html" data-filter="klasszikusGitarok,akusztikusGitarok,elektromosGitarok,hurok">Gitár</a>
-                <ul>
-                    <li><a href="main.html" data-filter="klasszikusGitarok">Klasszikus Gitárok</a></li>
-                    <li><a href="main.html" data-filter="akusztikusGitarok">Akusztikus Gitárok</a></li>
-                    <li><a href="main.html" data-filter="elektromosGitarok">Elektromos Gitárok</a></li>
-                    <li><a href="main.html" data-filter="hurok">Húrok</a></li>
-                </ul>
-            </li>
-            <li><a href="main.html" data-filter="negyhurosBasszusGitarok,othurosBasszusGitarok">Basszusgitár</a>
-                <ul>
-                    <li><a href="main.html" data-filter="negyhurosBasszusGitarok">4-húros Basszusgitárok</a></li>
-                    <li><a href="main.html" data-filter="othurosBasszusGitarok">5-húrosok Basszusgitárok</a></li>
-                </ul>
-            </li>
-            <li><a href="main.html" data-filter="akdobok,pergodob,cintanyer,elektromosDobok">Dob</a>
-                <ul>
-                    <li class="has-submenu">
-                        <a href="main.html" data-filter="akdobok,pergodob,cintanyer">Akusztikus Dobok</a>
-                        <ul class="submenu">
-                            <li><a href="main.html" data-filter="akdobok">Akusztikus Dobszerelések</a></li>
-                            <li><a href="main.html" data-filter="pergodob">Pergődobok</a></li>
-                            <li><a href="main.html" data-filter="cintanyer">Cintányér szettek</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="main.html" data-filter="elektromosDobok">Elektromos Dobok</a>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="main.html">Billentyűk</a>
-                <ul>
-                    <li><a href="main.html">Digitális Zongorák</a></li>
-                    <li><a href="main.html">Szintetizátorok</a></li>
-                    <li><a href="main.html">MIDI</a></li>
-                </ul>
-            </li>
-            <li><a href="main.html">Fúvosok</a>
-                <ul>
-                    <li><a href="main.html">Furulyák</a></li>
-                    <li><a href="main.html">Fuvolák</a></li>
-                    <li><a href="main.html">Szaxofonok</a></li>
-                    <li><a href="main.html">Harsonák</a></li>
-                    <li><a href="main.html">Trombiták</a></li>
-                    <li><a href="main.html">Tubák</a></li>
-                    <li><a href="main.html">Vadászkürtök</a></li>
-                </ul>
-            </li>
-            <li><a href="main.html">Vonós</a>
-                <ul>
-                    <li><a href="main.html">Hegedűk</a></li>
-                    <li><a href="main.html">Brácsák</a></li>
-                    <li><a href="main.html">Csellók</a></li>
-                    <li><a href="main.html">Nagybőgők</a></li>
-                    <li><a href="main.html">Vonók</a></li>
-                    <li><a href="main.html">Vonós Tartozékok</a></li>
-                </ul>
-            </li>
-            <li class="filterek"><a href="#">Filterek</a></li>
-        </ul>
-    </nav>
-
-    <main class="container-fluid mt-5">
-        <div class="row justify-content-center">
-            <!-- Left Column: Carousel and Thumbnails - Made larger -->
-            <div class="col-xl-5 col-lg-6">
-                <!-- Carousel for product images and video -->
-                <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner"></div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Előző</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Következő</span>
-                    </button>
-                </div>
-                <!-- Thumbnails below the carousel - Made larger -->
-                <div class="mt-4 d-flex justify-content-center flex-wrap"></div>
             </div>
+        </div>
+        <a href="kosar.html">Kosár</a> |
+        <a href="#">Elérhetőség</a>
+    </div>
+</header>
 
-            <!-- Right Column: Product Details - Made larger -->
-            <div class="col-xl-4 col-lg-4">
-                <h1 class="product-name fs-2 mb-3">Termék Név</h1>
-                <p class="product-price fs-4 mb-4"><strong>Ár:</strong> 50 000 Ft</p>
-                <a href="#" id="addToCartBtn" class="btn btn-primary btn-lg w-100 mb-3">Belehelyezés kosárba</a>
+<nav>
+    <ul>
+        <li><a href="main.html">Akciók</a></li>
+        <li><a href="main.html" data-filter="klasszikusGitarok,akusztikusGitarok,elektromosGitarok,hurok">Gitár</a>
+            <ul>
+                <li><a href="main.html" data-filter="klasszikusGitarok">Klasszikus Gitárok</a></li>
+                <li><a href="main.html" data-filter="akusztikusGitarok">Akusztikus Gitárok</a></li>
+                <li><a href="main.html" data-filter="elektromosGitarok">Elektromos Gitárok</a></li>
+                <li><a href="main.html" data-filter="hurok">Húrok</a></li>
+            </ul>
+        </li>
+        <li><a href="main.html" data-filter="negyhurosBasszusGitarok,othurosBasszusGitarok">Basszusgitár</a>
+            <ul>
+                <li><a href="main.html" data-filter="negyhurosBasszusGitarok">4-húros Basszusgitárok</a></li>
+                <li><a href="main.html" data-filter="othurosBasszusGitarok">5-húrosok Basszusgitárok</a></li>
+            </ul>
+        </li>
+        <li><a href="main.html" data-filter="akdobok,pergodob,cintanyer,elektromosDobok">Dob</a>
+            <ul>
+                <li class="has-submenu">
+                    <a href="main.html" data-filter="akdobok,pergodob,cintanyer">Akusztikus Dobok</a>
+                    <ul class="submenu">
+                        <li><a href="main.html" data-filter="akdobok">Akusztikus Dobszerelések</a></li>
+                        <li><a href="main.html" data-filter="pergodob">Pergődobok</a></li>
+                        <li><a href="main.html" data-filter="cintanyer">Cintányér szettek</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="main.html" data-filter="elektromosDobok">Elektromos Dobok</a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="main.html">Billentyűk</a>
+            <ul>
+                <li><a href="main.html">Digitális Zongorák</a></li>
+                <li><a href="main.html">Szintetizátorok</a></li>
+                <li><a href="main.html">MIDI</a></li>
+            </ul>
+        </li>
+        <li><a href="main.html">Fúvosok</a>
+            <ul>
+                <li><a href="main.html">Furulyák</a></li>
+                <li><a href="main.html">Fuvolák</a></li>
+                <li><a href="main.html">Szaxofonok</a></li>
+                <li><a href="main.html">Harsonák</a></li>
+                <li><a href="main.html">Trombiták</a></li>
+                <li><a href="main.html">Tubák</a></li>
+                <li><a href="main.html">Vadászkürtök</a></li>
+            </ul>
+        </li>
+        <li><a href="main.html">Vonós</a>
+            <ul>
+                <li><a href="main.html">Hegedűk</a></li>
+                <li><a href="main.html">Brácsák</a></li>
+                <li><a href="main.html">Csellók</a></li>
+                <li><a href="main.html">Nagybőgők</a></li>
+                <li><a href="main.html">Vonók</a></li>
+                <li><a href="main.html">Vonós Tartozékok</a></li>
+            </ul>
+        </li>
+        <li class="filterek"><a href="#">Filterek</a></li>
+    </ul>
+</nav>
 
-                <!-- Product Description -->
-                <div class="mt-4">
-                    <h3 class="mb-3 fs-4">Termék leírás</h3>
-                    <div class="p-4 bg-light rounded">
+<main class="container-fluid mt-5">
+    <div class="row justify-content-center">
+        <!-- Bal oszlop: Carousel + Thumbnails + Értékelések LISTA -->
+        <div class="col-xl-5 col-lg-6">
+            <!-- Carousel -->
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner"></div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Előző</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Következő</span>
+                </button>
+            </div>
+            <!-- Thumbnails -->
+            <div class="mt-4 d-flex justify-content-center flex-wrap"></div>
+
+            <!-- Értékelések LISTA (balra) -->
+            <div class="mt-5" id="ratingsDisplay">
+                <h3 class="fs-4 mb-3">Értékelések</h3>
+                <div id="ratingsList"></div>
+            </div>
+        </div>
+
+        <!-- Jobb oszlop: Részletek + Leírás clamp + Értékelés BEKÜLDŐ -->
+        <div class="col-xl-4 col-lg-4">
+            <h1 class="product-name fs-2 mb-3">Termék Név</h1>
+            <p class="product-price fs-4 mb-4"><strong>Ár:</strong> 50 000 Ft</p>
+            <a href="#" id="addToCartBtn" class="btn btn-primary btn-lg w-100 mb-3">Belehelyezés kosárba</a>
+
+            <!-- Leírás clamp -->
+            <div class="mt-4">
+                <h3 class="mb-3 fs-4">Termék leírás</h3>
+                <div id="descriptionWrapper">
+                    <div id="descriptionContent" class="p-4 bg-light rounded">
                         <div id="fullDescription">
                             <p class="mb-3"></p>
                             <p class="mb-0"></p>
                         </div>
                     </div>
+                    <div id="descFade" class="desc-fade d-none"></div>
                 </div>
-
-                <!-- Értékelések -->
-                <div class="mt-5" id="ratingsSection">
-                    <h3 class="fs-4 mb-3">Értékelések</h3>
-                    <div id="ratingsList"></div>
-                    <hr>
-                    <h4 class="fs-5 mb-2">Új értékelés beküldése</h4>
-                    <form id="ratingForm" autocomplete="off">
-                        <div class="mb-2">
-                            <span id="starRating">
-                                <!-- Csillagok ide generálódnak -->
-                            </span>
-                        </div>
-                        <div class="mb-2">
-                            <input type="text" id="ratingName" class="form-control" placeholder="Név (opcionális)">
-                        </div>
-                        <div class="mb-2">
-                            <textarea id="ratingComment" class="form-control" rows="2" placeholder="Írd meg a véleményed..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-success">Értékelés beküldése</button>
-                    </form>
-                </div>
+                <button id="toggleDescription" class="btn btn-link p-0 mt-2 d-none">Bővebben</button>
             </div>
-        </div>
-    </main>
 
-    <!-- Image Zoom Modal -->
-    <div class="modal fade zoom-modal" id="imageZoomModal" tabindex="-1" aria-labelledby="imageZoomModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <button type="button" class="close-zoom" data-bs-dismiss="modal" aria-label="Bezárás">×</button>
-                <div class="modal-body">
-                    <img id="zoomImage" src="" alt="Nagyított kép" class="zoom-image">
-                </div>
+            <!-- Értékelés BEKÜLDŐ (jobbra marad) -->
+            <div class="mt-5" id="ratingSubmitSection">
+                <h4 class="fs-5 mb-2">Új értékelés beküldése</h4>
+                <form id="ratingForm" autocomplete="off">
+                    <div class="mb-2">
+                        <span id="starRating"><!-- Csillagok ide --></span>
+                    </div>
+                    <div class="mb-2">
+                        <input type="text" id="ratingName" class="form-control" placeholder="Név (opcionális)">
+                    </div>
+                    <div class="mb-2">
+                        <textarea id="ratingComment" class="form-control" rows="2" placeholder="Írd meg a véleményed..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Értékelés beküldése</button>
+                </form>
             </div>
         </div>
     </div>
+</main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Image Zoom Modal -->
+<div class="modal fade zoom-modal" id="imageZoomModal" tabindex="-1" aria-labelledby="imageZoomModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <button type="button" class="close-zoom" data-bs-dismiss="modal" aria-label="Bezárás">×</button>
+            <div class="modal-body">
+                <img id="zoomImage" src="" alt="Nagyított kép" class="zoom-image">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -282,16 +311,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const osszes = JSON.parse(localStorage.getItem("osszesTermek") || "[]");
     const id = parseInt(localStorage.getItem("kivalasztottTermekID"), 10);
     const termek = osszes.find(t => t.id === id);
-    const params = new URLSearchParams(window.location.search);
 
     if (!termek) {
         alert("Termék nem található.");
         window.location.href = "main.html";
         return;
     }
+
+    // Kosárba gomb
     document.getElementById("addToCartBtn").onclick = function(e) {
         e.preventDefault();
-        if (!termek) return alert("Termék nem található!");
         let kosar = JSON.parse(localStorage.getItem("kosar") || "[]");
         const idx = kosar.findIndex(t => t.id === termek.id);
         if (idx > -1) {
@@ -303,20 +332,21 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("A termék a kosárba került!");
     };
 
+    // Alap adatok
     document.querySelector(".product-name").textContent = termek.nev;
     document.querySelector(".product-price").innerHTML = `<strong>Ár:</strong> ${termek.ar.toLocaleString()} Ft`;
 
-    const descContainer = document.querySelector(".product-name").closest(".col-xl-4").querySelector("#fullDescription p");
-    if (descContainer) {
-        descContainer.textContent = termek.leiras;
-    }
+    // Leírás szöveg
+    const firstP = document.querySelector("#fullDescription p.mb-3");
+    if (firstP) firstP.textContent = termek.leiras || "";
 
+    // Carousel és thumbnail-ek
     const carouselInner = document.querySelector(".carousel-inner");
     const thumbnails = document.querySelector(".mt-4.d-flex");
     carouselInner.innerHTML = "";
     thumbnails.innerHTML = "";
 
-    // Add product images to carousel
+    // Képek
     termek.kepek.forEach((kep, index) => {
         const item = document.createElement("div");
         item.className = "carousel-item" + (index === 0 ? " active" : "");
@@ -333,7 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
         thumbnails.appendChild(thumb);
     });
 
-    // Add video to carousel if available
+    // Videó (YouTube)
     if (termek.video && termek.video.includes("youtube.com")) {
         const videoItem = document.createElement("div");
         videoItem.className = "carousel-item";
@@ -346,12 +376,12 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="d-flex align-items-center justify-content-center h-100">
                 <div style="width: 95%; max-width: 800px;">
                     <div class="ratio ratio-16x9">
-                        <iframe 
-                            src="${videoSrc}" 
-                            title="Termék videó" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
+                        <iframe
+                            src="${videoSrc}"
+                            title="Termék videó"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
                             allowfullscreen>
                         </iframe>
                     </div>
@@ -360,7 +390,6 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
         carouselInner.appendChild(videoItem);
 
-        // Add video thumbnail
         const videoThumb = document.createElement("div");
         videoThumb.className = "img-thumbnail mx-2 mb-2 d-flex align-items-center justify-content-center";
         videoThumb.style = "width: 120px; height: 120px; cursor: pointer; background-color: #f8f9fa;";
@@ -370,20 +399,16 @@ document.addEventListener("DOMContentLoaded", () => {
         thumbnails.appendChild(videoThumb);
     }
 
-    // Add click event listeners for image zoom
+    // Kép nagyítás
     setTimeout(() => {
-        // Add event listeners to carousel images
         document.querySelectorAll('.carousel-item img[data-image-src]').forEach(img => {
             img.addEventListener('click', function() {
                 const imageSrc = this.getAttribute('data-image-src');
                 openImageZoom(imageSrc);
             });
         });
-
-        // Add event listeners to thumbnail images
         document.querySelectorAll('.img-thumbnail[data-image-src]').forEach(thumb => {
             thumb.addEventListener('click', function(e) {
-                // Prevent carousel slide if clicking for zoom
                 if (e.ctrlKey || e.metaKey) {
                     e.preventDefault();
                     const imageSrc = this.getAttribute('data-image-src');
@@ -393,11 +418,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, 100);
 
-    // --- Értékelés funkció inicializálás ---
-    initRatings(id);
+    // Leírás clamp beállítás
+    setupDescriptionClamp();
+
+    // Értékelések betöltése (LISTA balra) + Csillagok renderelése + Form submit
+    loadRatings();
+    renderStars();
 });
 
-// Image Zoom Modal
+// Kép zoom modal
 function openImageZoom(imageSrc) {
     const zoomImage = document.getElementById('zoomImage');
     const zoomModal = new bootstrap.Modal(document.getElementById('imageZoomModal'));
@@ -415,50 +444,144 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-let selectedStars = 0;
+/* --------- Leírás clamp logika --------- */
+let descExpanded = false;
+function setupDescriptionClamp() {
+    const productCarousel = document.getElementById('productCarousel');
+    const descriptionContent = document.getElementById('descriptionContent');
+    const descriptionWrapper = document.getElementById('descriptionWrapper');
+    const fadeEl = document.getElementById('descFade');
+    const toggleBtn = document.getElementById('toggleDescription');
 
-    function ratingsKey() {
-        return "ratings";
-    }
+    function computeMaxHeight() {
+        if (!productCarousel || !descriptionWrapper) return;
 
-    function renderStars() {
-        const starRating = document.getElementById("starRating");
-        starRating.innerHTML = "";
-        for (let i = 1; i <= 5; i++) {
-            const star = document.createElement("span");
-            star.textContent = i <= selectedStars ? "★" : "☆";
-            star.style.cursor = "pointer";
-            star.style.color = "#ffc107";
-            star.style.fontSize = "24px";
-            star.addEventListener("click", function () {
-                selectedStars = i;
-                renderStars();
-            });
-            starRating.appendChild(star);
+        // Abszolút pozíciók a dokumentumhoz viszonyítva
+        const carRect = productCarousel.getBoundingClientRect();
+        const carBottom = carRect.bottom + window.scrollY;
+
+        const descRect = descriptionWrapper.getBoundingClientRect();
+        const descTop = descRect.top + window.scrollY;
+
+        // Mekkora lehet a leírás max magassága, hogy a carousel aljáig érjen
+        let maxH = Math.max(0, Math.floor(carBottom - descTop));
+
+        // Biztonsági korlát: ha túl kicsi vagy negatív, ne vágjunk túl agresszíven
+        if (maxH < 120) maxH = 120;
+
+        // Ha nincs kinyitva, alkalmazzuk a maxHeight-ot
+        if (!descExpanded) {
+            descriptionContent.style.maxHeight = maxH + "px";
+        }
+
+        // Döntés a "Bővebben" gomb és fade láthatóságáról
+        const isOverflowing = descriptionContent.scrollHeight - 1 > descriptionContent.clientHeight; // -1 a subpixel miatt
+        if (isOverflowing && !descExpanded) {
+            toggleBtn.classList.remove('d-none');
+            fadeEl.classList.remove('d-none');
+        } else {
+            if (!descExpanded) {
+                // Ha nem lóg ki, ne mutassuk a gombot és a fade-et
+                toggleBtn.classList.add('d-none');
+                fadeEl.classList.add('d-none');
+            }
         }
     }
-    renderStars();
 
-    function loadRatings() {
-        const ratings = JSON.parse(localStorage.getItem(ratingsKey()) || "[]");
-        const ratingsList = document.getElementById("ratingsList");
-        ratingsList.innerHTML = ratings.length === 0
-            ? "<p>Még nincsenek értékelések.</p>"
-            : ratings.map(r =>
-                `<div class="mb-3 p-2 border rounded bg-light">
-                    <strong style="color:#ffc107;">${"★".repeat(r.stars)}${"☆".repeat(5 - r.stars)}</strong>
-                    <span class="ms-2">${r.name ? r.name : "Vendég"}</span>
-                    <p class="mb-0 mt-1">${r.comment.replace(/</g, "&lt;")}</p>
-                    <small class="text-muted">${new Date(r.timestamp).toLocaleString("hu-HU")}</small>
-                </div>`
-            ).join("");
+    // Gomb működése
+    toggleBtn.addEventListener('click', function() {
+        descExpanded = !descExpanded;
+        if (descExpanded) {
+            descriptionContent.style.maxHeight = "none";
+            fadeEl.classList.add('d-none');
+            toggleBtn.textContent = "Kevesebb";
+        } else {
+            toggleBtn.textContent = "Bővebben";
+            fadeEl.classList.remove('d-none');
+            computeMaxHeight(); // visszaállítjuk a számított magasságot
+        }
+    });
+
+    // Reakció ablakméret változásra és képek betöltésére
+    window.addEventListener('resize', () => {
+        if (!descExpanded) computeMaxHeight();
+    });
+
+    // Mikor a képek betöltődnek, változhat a carousel magassága
+    const imgs = document.querySelectorAll('#productCarousel img');
+    let pending = imgs.length;
+    if (pending === 0) {
+        computeMaxHeight();
+    } else {
+        imgs.forEach(img => {
+            if (img.complete) {
+                if (--pending === 0) computeMaxHeight();
+            } else {
+                img.addEventListener('load', () => {
+                    if (--pending === 0) computeMaxHeight();
+                });
+                img.addEventListener('error', () => {
+                    if (--pending === 0) computeMaxHeight();
+                });
+            }
+        });
+        // Biztonsági timeout, ha load nem jön
+        setTimeout(() => computeMaxHeight(), 1000);
     }
-    loadRatings();
 
-    const ratingForm = document.getElementById("ratingForm");
-    const ratingName = document.getElementById("ratingName");
-    const ratingComment = document.getElementById("ratingComment");
+    // Első számítás fallback
+    setTimeout(() => computeMaxHeight(), 300);
+}
 
+/* --------- Értékelések (LISTA balra + BEKÜLDŐ jobbra) --------- */
+let selectedStars = 0;
+
+// Termékenként külön kulcs
+function ratingsKey() {
+    const id = localStorage.getItem("kivalasztottTermekID");
+    return "ratings_" + (id || "default");
+}
+
+function renderStars() {
+    const starRating = document.getElementById("starRating");
+    if (!starRating) return;
+    starRating.innerHTML = "";
+    for (let i = 1; i <= 5; i++) {
+        const star = document.createElement("span");
+        star.textContent = i <= selectedStars ? "★" : "☆";
+        star.style.cursor = "pointer";
+        star.style.color = "#ffc107";
+        star.style.fontSize = "24px";
+        star.addEventListener("click", function () {
+            selectedStars = i;
+            renderStars();
+        });
+        starRating.appendChild(star);
+    }
+}
+
+function loadRatings() {
+    const ratings = JSON.parse(localStorage.getItem(ratingsKey()) || "[]");
+    const ratingsList = document.getElementById("ratingsList");
+    if (!ratingsList) return;
+    ratingsList.innerHTML = ratings.length === 0
+        ? "<p>Még nincsenek értékelések.</p>"
+        : ratings.map(r =>
+            `<div class="mb-3 p-2 border rounded bg-light">
+                <strong style="color:#ffc107;">${"★".repeat(r.stars)}${"☆".repeat(5 - r.stars)}</strong>
+                <span class="ms-2">${r.name ? r.name : "Vendég"}</span>
+                <p class="mb-0 mt-1">${r.comment.replace(/</g, "&lt;")}</p>
+                <small class="text-muted">${new Date(r.timestamp).toLocaleString("hu-HU")}</small>
+            </div>`
+        ).join("");
+}
+
+// Beküldő űrlap
+const ratingForm = document.getElementById("ratingForm");
+const ratingName = document.getElementById("ratingName");
+const ratingComment = document.getElementById("ratingComment");
+
+if (ratingForm) {
     ratingForm.addEventListener("submit", function (e) {
         e.preventDefault();
         if (selectedStars === 0) {
@@ -467,8 +590,8 @@ let selectedStars = 0;
         }
         const rating = {
             stars: selectedStars,
-            name: ratingName.value.trim(),
-            comment: ratingComment.value.trim(),
+            name: (ratingName?.value || "").trim(),
+            comment: (ratingComment?.value || "").trim(),
             timestamp: Date.now()
         };
         const ratings = JSON.parse(localStorage.getItem(ratingsKey()) || "[]");
@@ -476,11 +599,12 @@ let selectedStars = 0;
         localStorage.setItem(ratingsKey(), JSON.stringify(ratings));
         loadRatings();
         selectedStars = 0;
-        ratingName.value = "";
-        ratingComment.value = "";
+        if (ratingName) ratingName.value = "";
+        if (ratingComment) ratingComment.value = "";
         renderStars();
         alert("Köszönjük az értékelést!");
     });
+}
 </script>
 </body>
 </html>
